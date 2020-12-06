@@ -1,0 +1,3 @@
+"D:\ide\clion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Have.dir/objects.a
+D:\ide\MinGW64\mingw64\bin\ar.exe cr CMakeFiles\Have.dir/objects.a @CMakeFiles\Have.dir\objects1.rsp
+D:\ide\MinGW64\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Have.dir/objects.a -Wl,--no-whole-archive  -o Have.exe -Wl,--out-implib,libHave.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Have.dir\linklibs.rsp

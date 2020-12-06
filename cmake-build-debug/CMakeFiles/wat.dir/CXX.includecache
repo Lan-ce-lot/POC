@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/work/clion/POC/al/wat.cpp
+algorithm
+-
+iostream
+-
+cstdlib
+-
+cstring
+-
+sstream
+-
+vector
+-
+cstdio
+-
+bitset
+-
+string
+-
+cmath
+-
+deque
+-
+queue
+-
+stack
+-
+map
+-
+set
+-
+

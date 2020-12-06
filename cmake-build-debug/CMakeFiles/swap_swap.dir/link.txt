@@ -1,0 +1,3 @@
+"D:\ide\clion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\swap_swap.dir/objects.a
+D:\ide\MinGW64\mingw64\bin\ar.exe cr CMakeFiles\swap_swap.dir/objects.a @CMakeFiles\swap_swap.dir\objects1.rsp
+D:\ide\MinGW64\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\swap_swap.dir/objects.a -Wl,--no-whole-archive  -o swap_swap.exe -Wl,--out-implib,libswap_swap.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\swap_swap.dir\linklibs.rsp

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/work/clion/POC/sy2/grammar_parser.cpp
+iostream
+-
+string
+-
+vector
+-
+map
+-
+set
+-
+stack
+-
+algorithm
+-
+

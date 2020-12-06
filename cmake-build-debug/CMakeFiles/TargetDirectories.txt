@@ -1,0 +1,11 @@
+D:/work/clion/POC/cmake-build-debug/CMakeFiles/POC.dir
+D:/work/clion/POC/cmake-build-debug/CMakeFiles/Palindromic.dir
+D:/work/clion/POC/cmake-build-debug/CMakeFiles/wat.dir
+D:/work/clion/POC/cmake-build-debug/CMakeFiles/jiege.dir
+D:/work/clion/POC/cmake-build-debug/CMakeFiles/CMakeCXXCompilerId.dir
+D:/work/clion/POC/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/work/clion/POC/cmake-build-debug/CMakeFiles/main.dir
+D:/work/clion/POC/cmake-build-debug/CMakeFiles/lexical_analysis.dir
+D:/work/clion/POC/cmake-build-debug/CMakeFiles/grammar_parser.dir
+D:/work/clion/POC/cmake-build-debug/CMakeFiles/operator_precedence_grammar.dir
+D:/work/clion/POC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
