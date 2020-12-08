@@ -1,7 +1,8 @@
 "D:\ide\clion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\work\clion\POC
     -- src/Palindromic.cpp will be compiled to bin/Palindromic
+    -- src/dp2.cpp will be compiled to bin/dp2
     -- src/jiege.cpp will be compiled to bin/jiege
-    -- src/wat.cpp will be compiled to bin/wat
+    -- src/tx.cpp will be compiled to bin/tx
     -- src/CMakeCXXCompilerId.cpp will be compiled to bin/CMakeCXXCompilerId
     -- src/main.cpp will be compiled to bin/main
     -- src/lexical_analysis.cpp will be compiled to bin/lexical_analysis

@@ -10,6 +10,20 @@ const int MAXX = 550;
 grammar G;
 
 /**
+ * S'->#S#
+ */
+grammar change(grammar &G) {
+
+    char vn = get_Vn(G.Vn);
+    string tem = "#" + G.Vn.substr(0, 1);
+    tem += "#";
+    G.P[vn].push_back(tem);
+    G.S = vn;
+    G.Vt += '#';
+    G.Vn = G.S + G.Vn;
+    return G;
+}
+/**
  * 求FIRSTVT
  */
 map<char, set<char> > FIRSTVT;
@@ -139,11 +153,12 @@ void getPriorityRelationshipTable(grammar G) {
 /**
  * 算符优先分析
  */
-void ERROR() {
+bool ERROR() {
     cout << "出错了!!!!!!!!!!" << endl;
+    return false;
 }
 
-void operatorPrecedenceAnalysis(grammar G, string str) {
+bool operatorPrecedenceAnalysis(grammar G, string str) {
     str = str + "#";
     // top 指向栈顶，j指向最接近栈顶的终结符
     int top = 1, j = 0, index = 0;
@@ -156,7 +171,7 @@ void operatorPrecedenceAnalysis(grammar G, string str) {
         while (relationshipTable[{S[j], a}] == '>') {
             while (true) {
                 char Q = S[j];
-                j = (is_Vt(S[j - 1] ? j - 1 : j - 2));
+                j = (is_Vt(S[j - 1]) ? j - 1 : j - 2);
 
                 if (relationshipTable[{S[j], Q}] == '<') {
                     break;
@@ -172,29 +187,49 @@ void operatorPrecedenceAnalysis(grammar G, string str) {
         if (relationshipTable[{S[j], a}] == '<' || relationshipTable[{S[j], a}] == '=') {
             top++;
             S[top] = a;
-        } else ERROR();
+        } else return ERROR();
         if (a == '#') break;
     }
+    return true;
 }
 
-////得到优先关系
-//int relate(int a, int b) {
-//    map<char, int> M{
-//            {'>', 1},
-//            {'<', -1},
-//            {'=', 0},
-//            {'2', 2},
-//            {'3', 3},
-//            {'4', 4}};
-//    return M[relation[--a][--b]];
-//}
-
 int main() {
+    char ch;
     G = grammar_read("D:\\work\\clion\\POC\\sy3\\1.txt");
+    change(G);
+
+    print_G(G);
 
     getFIRSTVT(G);
     getLASTVT(G);
     getPriorityRelationshipTable(G);
-    operatorPrecedenceAnalysis(G, "i+i");
+//    cout << operatorPrecedenceAnalysis(G, "i+i");
+
+    FILE* fpin2;
+    if((fpin2=fopen(R"(D:\work\clion\POC\sy3\jz.txt)","r"))==NULL) {
+        cout<<"文件路径错误\n";
+        return 0;
+    }
+    string str = "";
+    vector<string> query, copy;
+    while ((ch) != EOF) {
+        str = "";
+        while ((ch = GetBC(fpin2)) != ';') {
+            if (ch == EOF) break;
+            str += ch;
+        }
+        query.push_back(str);
+        if (ch == EOF) break;
+        ch = GetBC(fpin2);
+    }
+    string test_in;
+
+    copy = query;
+    for (auto &it : query) it = lexical(it);
+    for (auto it : query) cout << it << endl;
+    for (int i = 0; i < query.size(); i++) {
+        cout << copy[i] << endl;
+        cout << (operatorPrecedenceAnalysis(G, query[i]) ? "正确" : "错误") << endl;
+    }
     return 0;
 }

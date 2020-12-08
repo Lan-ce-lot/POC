@@ -130,6 +130,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named tx
+
+# Build rule for target.
+tx: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tx
+.PHONY : tx
+
+# fast build rule for target.
+tx/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tx.dir\build.make CMakeFiles/tx.dir/build
+.PHONY : tx/fast
+
+#=============================================================================
+# Target rules for targets named dp2
+
+# Build rule for target.
+dp2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 dp2
+.PHONY : dp2
+
+# fast build rule for target.
+dp2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dp2.dir\build.make CMakeFiles/dp2.dir/build
+.PHONY : dp2/fast
+
+#=============================================================================
 # Target rules for targets named POC
 
 # Build rule for target.
@@ -154,19 +180,6 @@ Palindromic: cmake_check_build_system
 Palindromic/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Palindromic.dir\build.make CMakeFiles/Palindromic.dir/build
 .PHONY : Palindromic/fast
-
-#=============================================================================
-# Target rules for targets named wat
-
-# Build rule for target.
-wat: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 wat
-.PHONY : wat
-
-# fast build rule for target.
-wat/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wat.dir\build.make CMakeFiles/wat.dir/build
-.PHONY : wat/fast
 
 #=============================================================================
 # Target rules for targets named jiege
@@ -300,6 +313,33 @@ al/Palindromic.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Palindromic.dir\build.make CMakeFiles/Palindromic.dir/al/Palindromic.cpp.s
 .PHONY : al/Palindromic.cpp.s
 
+al/dp2.obj: al/dp2.cpp.obj
+
+.PHONY : al/dp2.obj
+
+# target to build an object file
+al/dp2.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dp2.dir\build.make CMakeFiles/dp2.dir/al/dp2.cpp.obj
+.PHONY : al/dp2.cpp.obj
+
+al/dp2.i: al/dp2.cpp.i
+
+.PHONY : al/dp2.i
+
+# target to preprocess a source file
+al/dp2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dp2.dir\build.make CMakeFiles/dp2.dir/al/dp2.cpp.i
+.PHONY : al/dp2.cpp.i
+
+al/dp2.s: al/dp2.cpp.s
+
+.PHONY : al/dp2.s
+
+# target to generate assembly for a file
+al/dp2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dp2.dir\build.make CMakeFiles/dp2.dir/al/dp2.cpp.s
+.PHONY : al/dp2.cpp.s
+
 al/jiege.obj: al/jiege.cpp.obj
 
 .PHONY : al/jiege.obj
@@ -327,32 +367,32 @@ al/jiege.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\jiege.dir\build.make CMakeFiles/jiege.dir/al/jiege.cpp.s
 .PHONY : al/jiege.cpp.s
 
-al/wat.obj: al/wat.cpp.obj
+al/tx.obj: al/tx.cpp.obj
 
-.PHONY : al/wat.obj
+.PHONY : al/tx.obj
 
 # target to build an object file
-al/wat.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wat.dir\build.make CMakeFiles/wat.dir/al/wat.cpp.obj
-.PHONY : al/wat.cpp.obj
+al/tx.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tx.dir\build.make CMakeFiles/tx.dir/al/tx.cpp.obj
+.PHONY : al/tx.cpp.obj
 
-al/wat.i: al/wat.cpp.i
+al/tx.i: al/tx.cpp.i
 
-.PHONY : al/wat.i
+.PHONY : al/tx.i
 
 # target to preprocess a source file
-al/wat.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wat.dir\build.make CMakeFiles/wat.dir/al/wat.cpp.i
-.PHONY : al/wat.cpp.i
+al/tx.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tx.dir\build.make CMakeFiles/tx.dir/al/tx.cpp.i
+.PHONY : al/tx.cpp.i
 
-al/wat.s: al/wat.cpp.s
+al/tx.s: al/tx.cpp.s
 
-.PHONY : al/wat.s
+.PHONY : al/tx.s
 
 # target to generate assembly for a file
-al/wat.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wat.dir\build.make CMakeFiles/wat.dir/al/wat.cpp.s
-.PHONY : al/wat.cpp.s
+al/tx.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tx.dir\build.make CMakeFiles/tx.dir/al/tx.cpp.s
+.PHONY : al/tx.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -476,24 +516,28 @@ help:
 	@echo ... CMakeCXXCompilerId
 	@echo ... POC
 	@echo ... Palindromic
+	@echo ... dp2
 	@echo ... grammar_parser
 	@echo ... jiege
 	@echo ... lexical_analysis
 	@echo ... main
 	@echo ... operator_precedence_grammar
-	@echo ... wat
+	@echo ... tx
 	@echo ... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.obj
 	@echo ... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.i
 	@echo ... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.s
 	@echo ... al/Palindromic.obj
 	@echo ... al/Palindromic.i
 	@echo ... al/Palindromic.s
+	@echo ... al/dp2.obj
+	@echo ... al/dp2.i
+	@echo ... al/dp2.s
 	@echo ... al/jiege.obj
 	@echo ... al/jiege.i
 	@echo ... al/jiege.s
-	@echo ... al/wat.obj
-	@echo ... al/wat.i
-	@echo ... al/wat.s
+	@echo ... al/tx.obj
+	@echo ... al/tx.i
+	@echo ... al/tx.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

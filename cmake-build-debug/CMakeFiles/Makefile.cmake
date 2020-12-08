@@ -53,9 +53,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/tx.dir/DependInfo.cmake"
+  "CMakeFiles/dp2.dir/DependInfo.cmake"
   "CMakeFiles/POC.dir/DependInfo.cmake"
   "CMakeFiles/Palindromic.dir/DependInfo.cmake"
-  "CMakeFiles/wat.dir/DependInfo.cmake"
   "CMakeFiles/jiege.dir/DependInfo.cmake"
   "CMakeFiles/CMakeCXXCompilerId.dir/DependInfo.cmake"
   "CMakeFiles/main.dir/DependInfo.cmake"

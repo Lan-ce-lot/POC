@@ -663,7 +663,7 @@ int main() {
         ch = GetBC(fpin2);
     }
 
-    string test_in;
+//    string test_in;
 
     copy = query;
     for (auto &it : query) it = lexical(it);

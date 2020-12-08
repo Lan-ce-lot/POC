@@ -135,8 +135,10 @@ int main() {
     FILE *fpin;
     cout << "词法分析器输出：" << endl;
     while (true) {
-        if ((fpin = fopen(R"(D:\work\clion\POC\sy1\test.txt)", "r")) != nullptr) break;
-        else cout << "文件路径错误\n";
+        if ((fpin = fopen(R"(D:\work\clion\POC\sy1\test.txt)", "r")) != nullptr)
+            break;
+        else
+            cout << "文件路径错误\n";
         return 0;
     }
     printf("0.标识符 1.十进制 2.八进制 3:十六进制\n");

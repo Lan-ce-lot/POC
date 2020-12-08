@@ -44,7 +44,7 @@ bool exitV(string str, char c) {
 }
 
 bool is_Vt(char c) {
-    string Vt = "!@$%^&*()_+-={}[]<>?/";
+    string Vt = "!@$%^&*()_+-={}[]<>?#/,";
     for (int i = 0; i < Vt.size(); i++) {
         if (Vt[i] == c) return true;
     }
