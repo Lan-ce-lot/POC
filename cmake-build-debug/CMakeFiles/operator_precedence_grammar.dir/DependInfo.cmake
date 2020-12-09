@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/work/clion/POC/sy3/operator_precedence_grammar.cpp" "D:/work/clion/POC/cmake-build-debug/CMakeFiles/operator_precedence_grammar.dir/sy3/operator_precedence_grammar.cpp.obj"
+  "/home/lance/CLionProjects/POC/sy3/operator_precedence_grammar.cpp" "/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles/operator_precedence_grammar.dir/sy3/operator_precedence_grammar.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/work/clion/POC/al/jiege.cpp" "D:/work/clion/POC/cmake-build-debug/CMakeFiles/jiege.dir/al/jiege.cpp.obj"
+  "/home/lance/CLionProjects/POC/al/jiege.cpp" "/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles/jiege.dir/al/jiege.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/lexical_analysis.dir/sy1/lexical_analysis.cpp.obj"
-  "lexical_analysis.exe"
-  "lexical_analysis.exe.manifest"
+  "CMakeFiles/lexical_analysis.dir/sy1/lexical_analysis.cpp.o"
+  "lexical_analysis"
   "lexical_analysis.pdb"
-  "liblexical_analysis.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

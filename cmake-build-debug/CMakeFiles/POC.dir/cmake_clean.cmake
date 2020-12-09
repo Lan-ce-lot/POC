@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/POC.dir/main.cpp.obj"
-  "POC.exe"
-  "POC.exe.manifest"
+  "CMakeFiles/POC.dir/main.cpp.o"
+  "POC"
   "POC.pdb"
-  "libPOC.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

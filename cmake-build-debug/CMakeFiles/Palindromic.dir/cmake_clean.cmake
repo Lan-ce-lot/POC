@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Palindromic.dir/al/Palindromic.cpp.obj"
-  "Palindromic.exe"
-  "Palindromic.exe.manifest"
+  "CMakeFiles/Palindromic.dir/al/Palindromic.cpp.o"
+  "Palindromic"
   "Palindromic.pdb"
-  "libPalindromic.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

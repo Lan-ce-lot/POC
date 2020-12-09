@@ -1,8 +1,20 @@
-"D:\ide\clion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\work\clion\POC
+/home/lance/文档/software/clion/clion-2020.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/lance/CLionProjects/POC
+-- The C compiler identification is GNU 9.3.0
+-- The CXX compiler identification is GNU 5.3.1
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
     -- src/Palindromic.cpp will be compiled to bin/Palindromic
-    -- src/dp2.cpp will be compiled to bin/dp2
     -- src/jiege.cpp will be compiled to bin/jiege
-    -- src/tx.cpp will be compiled to bin/tx
     -- src/CMakeCXXCompilerId.cpp will be compiled to bin/CMakeCXXCompilerId
     -- src/main.cpp will be compiled to bin/main
     -- src/lexical_analysis.cpp will be compiled to bin/lexical_analysis
@@ -10,4 +22,4 @@
     -- src/operator_precedence_grammar.cpp will be compiled to bin/operator_precedence_grammar
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/work/clion/POC/cmake-build-debug
+-- Build files have been written to: /home/lance/CLionProjects/POC/cmake-build-debug

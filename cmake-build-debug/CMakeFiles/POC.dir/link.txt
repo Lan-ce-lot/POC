@@ -1,3 +1,1 @@
-"D:\ide\clion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\POC.dir/objects.a
-D:\ide\MinGW64\mingw64\bin\ar.exe cr CMakeFiles\POC.dir/objects.a @CMakeFiles\POC.dir\objects1.rsp
-D:\ide\MinGW64\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\POC.dir/objects.a -Wl,--no-whole-archive  -o POC.exe -Wl,--out-implib,libPOC.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\POC.dir\linklibs.rsp
+/usr/bin/c++  -g   CMakeFiles/POC.dir/main.cpp.o  -o POC 

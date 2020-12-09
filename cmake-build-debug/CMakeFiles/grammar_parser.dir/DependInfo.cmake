@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/work/clion/POC/sy2/grammar_parser.cpp" "D:/work/clion/POC/cmake-build-debug/CMakeFiles/grammar_parser.dir/sy2/grammar_parser.cpp.obj"
+  "/home/lance/CLionProjects/POC/sy2/grammar_parser.cpp" "/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles/grammar_parser.dir/sy2/grammar_parser.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

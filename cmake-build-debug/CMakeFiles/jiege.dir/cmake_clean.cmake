@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/jiege.dir/al/jiege.cpp.obj"
-  "jiege.exe"
-  "jiege.exe.manifest"
+  "CMakeFiles/jiege.dir/al/jiege.cpp.o"
+  "jiege"
   "jiege.pdb"
-  "libjiege.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,3 +1,1 @@
-"D:\ide\clion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\grammar_parser.dir/objects.a
-D:\ide\MinGW64\mingw64\bin\ar.exe cr CMakeFiles\grammar_parser.dir/objects.a @CMakeFiles\grammar_parser.dir\objects1.rsp
-D:\ide\MinGW64\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\grammar_parser.dir/objects.a -Wl,--no-whole-archive  -o grammar_parser.exe -Wl,--out-implib,libgrammar_parser.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\grammar_parser.dir\linklibs.rsp
+/usr/bin/c++  -g   CMakeFiles/grammar_parser.dir/sy2/grammar_parser.cpp.o  -o grammar_parser 

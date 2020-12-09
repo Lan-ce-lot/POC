@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-D:/work/clion/POC/sy3/grammar_2.h
+/home/lance/CLionProjects/POC/sy3/grammar_2.h
 bits/stdc++.h
 -
 
-D:/work/clion/POC/sy3/operator_precedence_grammar.cpp
+/home/lance/CLionProjects/POC/sy3/operator_precedence_grammar.cpp
 bits/stdc++.h
 -
 grammar_2.h
-D:/work/clion/POC/sy3/grammar_2.h
+/home/lance/CLionProjects/POC/sy3/grammar_2.h
 

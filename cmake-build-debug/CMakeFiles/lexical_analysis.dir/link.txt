@@ -1,3 +1,1 @@
-"D:\ide\clion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\lexical_analysis.dir/objects.a
-D:\ide\MinGW64\mingw64\bin\ar.exe cr CMakeFiles\lexical_analysis.dir/objects.a @CMakeFiles\lexical_analysis.dir\objects1.rsp
-D:\ide\MinGW64\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\lexical_analysis.dir/objects.a -Wl,--no-whole-archive  -o lexical_analysis.exe -Wl,--out-implib,liblexical_analysis.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\lexical_analysis.dir\linklibs.rsp
+/usr/bin/c++  -g   CMakeFiles/lexical_analysis.dir/sy1/lexical_analysis.cpp.o  -o lexical_analysis 

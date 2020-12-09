@@ -1,3 +1,1 @@
-"D:\ide\clion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\operator_precedence_grammar.dir/objects.a
-D:\ide\MinGW64\mingw64\bin\ar.exe cr CMakeFiles\operator_precedence_grammar.dir/objects.a @CMakeFiles\operator_precedence_grammar.dir\objects1.rsp
-D:\ide\MinGW64\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\operator_precedence_grammar.dir/objects.a -Wl,--no-whole-archive  -o operator_precedence_grammar.exe -Wl,--out-implib,liboperator_precedence_grammar.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\operator_precedence_grammar.dir\linklibs.rsp
+/usr/bin/c++  -g   CMakeFiles/operator_precedence_grammar.dir/sy3/operator_precedence_grammar.cpp.o  -o operator_precedence_grammar 

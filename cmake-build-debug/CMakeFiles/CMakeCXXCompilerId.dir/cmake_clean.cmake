@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeCXXCompilerId.exe"
-  "CMakeCXXCompilerId.exe.manifest"
+  "CMakeCXXCompilerId"
   "CMakeCXXCompilerId.pdb"
-  "CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.obj"
-  "libCMakeCXXCompilerId.dll.a"
+  "CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.
