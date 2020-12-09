@@ -31,7 +31,7 @@ bool IsSymbols(char c) {
     return false;
 }
 
-// ÅÐ¶Ï¹Ø¼ü×Ö
+// åˆ¤æ–­å…³é”®å­—
 bool IsKey(string str) {
     for (int i = 0; i < KEY_LEN; i++)
         if (key[i] == str)
@@ -39,17 +39,17 @@ bool IsKey(string str) {
     return false;
 }
 
-// ÅÐ¶ÏÊÇ·ñÎª×ÖÄ¸
+// åˆ¤æ–­æ˜¯å¦ä¸ºå­—æ¯
 bool IsLetter(char c) {
     return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';
 }
 
-//ÅÐ¶ÏÊÇ·ñÎªa~f×ÖÄ¸
+//åˆ¤æ–­æ˜¯å¦ä¸ºa~få­—æ¯
 bool IsA_F(char c) {
     return c >= 'a' && c <= 'f' || c >= 'A' && c <= 'F';
 }
 
-//ÅÐ¶ÏÊÇ·ñÎªÊý×Ö
+//åˆ¤æ–­æ˜¯å¦ä¸ºæ•°å­—
 bool IsDigit(char c) {
     return c >= '0' && c <= '9';
 }
@@ -125,7 +125,7 @@ void scan(FILE *fpin) {
                     }
                 }
                 if (!flag)
-                    cout << "<" << ch << " ,ÎÞ·¨Ê¶±ð¸Ã×Ö·û>" << endl;
+                    cout << "<" << ch << " ,æ— æ³•è¯†åˆ«è¯¥å­—ç¬¦>" << endl;
             }
         }
     }
@@ -133,15 +133,15 @@ void scan(FILE *fpin) {
 
 int main() {
     FILE *fpin;
-    cout << "´Ê·¨·ÖÎöÆ÷Êä³ö£º" << endl;
+    cout << "è¯æ³•åˆ†æžå™¨è¾“å‡ºï¼š" << endl;
     while (true) {
         if ((fpin = fopen(R"(D:\work\clion\POC\sy1\test.txt)", "r")) != nullptr)
             break;
         else
-            cout << "ÎÄ¼þÂ·¾¶´íÎó\n";
+            cout << "æ–‡ä»¶è·¯å¾„é”™è¯¯\n";
         return 0;
     }
-    printf("0.±êÊ¶·û 1.Ê®½øÖÆ 2.°Ë½øÖÆ 3:Ê®Áù½øÖÆ\n");
+    printf("0.æ ‡è¯†ç¬¦ 1.åè¿›åˆ¶ 2.å…«è¿›åˆ¶ 3:åå…­è¿›åˆ¶\n");
     scan(fpin);
 //   system("pause");
     fclose(fpin);

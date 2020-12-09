@@ -11,15 +11,15 @@ using namespace std;
 #endif //POC_GRAMMAR_2_H
 
 struct grammar {
-    string Vn;		//Vn  ÎÄ·¨µÄ·ÇÖÕ½á·ûºÅ¼¯ºÏ
-    string Vt;		//Vt  ÎÄ·¨µÄÖÕ½á·ûºÅ¼¯ºÏ
-    char S{};			//S   ¿ªÊ¼·ûºÅ
-    map<char, vector<string> > P;//P   ²úÉúÊ½
+    string Vn;		//Vn  æ–‡æ³•çš„éç»ˆç»“ç¬¦å·é›†åˆ
+    string Vt;		//Vt  æ–‡æ³•çš„ç»ˆç»“ç¬¦å·é›†åˆ
+    char S{};			//S   å¼€å§‹ç¬¦å·
+    map<char, vector<string> > P;//P   äº§ç”Ÿå¼
 };
 
-// ÎÄ·¨´òÓ¡º¯Êı
+// æ–‡æ³•æ‰“å°å‡½æ•°
 void print_G(grammar g) {
-    cout << "ÎÄ·¨ " << endl;
+    cout << "æ–‡æ³• " << endl;
     for (int i = 0; i < g.Vn.size(); i++) {
         char c = g.Vn[i];cout << c << "->";
         for (int j = 0; j < g.P[c].size(); j++) {
@@ -30,12 +30,12 @@ void print_G(grammar g) {
         }
         puts("");
     }
-    cout << "¿ªÊ¼·û   " << g.S << endl;
-    cout << "·ÇÖÕ½á·û " << g.Vn << endl;
-    cout << "ÖÕ½á·û   " << g.Vt << "\n\n";
+    cout << "å¼€å§‹ç¬¦   " << g.S << endl;
+    cout << "éç»ˆç»“ç¬¦ " << g.Vn << endl;
+    cout << "ç»ˆç»“ç¬¦   " << g.Vt << "\n\n";
 }
 
-// ÅĞ¶ÏÒ»¸ö×Ö·û´®ÊÇ·ñÓĞ×Ö·ûc
+// åˆ¤æ–­ä¸€ä¸ªå­—ç¬¦ä¸²æ˜¯å¦æœ‰å­—ç¬¦c
 bool exitV(string str, char c) {
     for (auto i : str)
         if (i == c)
@@ -52,7 +52,7 @@ bool is_Vt(char c) {
     return false;
 }
 
-// ÓÃÓÚ¶ÁÈ¡Ò»¸ö·Ç¿Õ¸ñ×Ö·û
+// ç”¨äºè¯»å–ä¸€ä¸ªéç©ºæ ¼å­—ç¬¦
 char GetBC(FILE* fpi) {
     char ch;
     do {
@@ -61,8 +61,8 @@ char GetBC(FILE* fpi) {
     return ch;
 }
 
-// ÓÃÓÚÏû³ı×óµİ¹é
-// »ñÈ¡Ò»¸öĞÂµÄ·ÇÖÕ½á·û
+// ç”¨äºæ¶ˆé™¤å·¦é€’å½’
+// è·å–ä¸€ä¸ªæ–°çš„éç»ˆç»“ç¬¦
 char get_Vn(string str) {
     for (int i = 0; i < 26; i++) {
         char c = (i + 'A');
@@ -71,7 +71,7 @@ char get_Vn(string str) {
     return ' ';
 }
 
-// ¼ì²é²úÉúÊ½ÓÒ°ë²¿ÊÇ·ñ´æÔÚ
+// æ£€æŸ¥äº§ç”Ÿå¼å³åŠéƒ¨æ˜¯å¦å­˜åœ¨
 bool check_Vn_repeat(string s, vector<string> str) {
     for (auto it : str) {
         if (s == it) {
@@ -82,10 +82,10 @@ bool check_Vn_repeat(string s, vector<string> str) {
 }
 
 // ******************************************************************
-// »¯¼òÄ£¿é
+// åŒ–ç®€æ¨¡å—
 // ******************************************************************
 map<char, bool> vis;
-// Éî¶ÈÓÅÏÈËÑË÷£¬Í¨¹ıÅĞ¶Ï¶Ô¿ªÊ¼·û¶øÑÔ·ÇÖÕ½á·ûÊÇ·ñ¿É´ï£¬À´ÅĞ¶Ï·ÇÖÕ½á·ûµÄ²úÉúÊ½ÊÇ·ñ¶àÓà
+// æ·±åº¦ä¼˜å…ˆæœç´¢ï¼Œé€šè¿‡åˆ¤æ–­å¯¹å¼€å§‹ç¬¦è€Œè¨€éç»ˆç»“ç¬¦æ˜¯å¦å¯è¾¾ï¼Œæ¥åˆ¤æ–­éç»ˆç»“ç¬¦çš„äº§ç”Ÿå¼æ˜¯å¦å¤šä½™
 void dfs(grammar g, char c, string &res) {
     for (int i = 0; i < g.P[c].size(); i++) {
         for (int j = 0; j < g.P[c][i].size(); j++) {
@@ -100,7 +100,7 @@ void dfs(grammar g, char c, string &res) {
 }
 
 void simplify(grammar &g) {
-    string tem = ""; // ¼ÇÂ¼¿ªÊ¼·û¿É´ïµÄÖÕ½á·û
+    string tem = ""; // è®°å½•å¼€å§‹ç¬¦å¯è¾¾çš„ç»ˆç»“ç¬¦
     vis.clear();
     tem += g.S;
     vis[g.S] = true;
@@ -124,15 +124,15 @@ void simplify(grammar &g) {
         }
     }
     g.Vn = st;
-    puts("\n»¯¼ò");
+    puts("\nåŒ–ç®€");
     print_G(g);
 }
 
 // ******************************************************************
-// Ïû³ı×óµİ¹é
+// æ¶ˆé™¤å·¦é€’å½’
 // ******************************************************************
 void remove_left_recursion(grammar &g) {
-    // Ìæ»»
+    // æ›¿æ¢
     grammar new_g;
     new_g.S = g.S, new_g.Vn = g.Vn, new_g.Vt = g.Vt;
 
@@ -157,7 +157,7 @@ void remove_left_recursion(grammar &g) {
             new_g.P[c].clear();
         }
 
-        // Ïû³ıÖ±½Ó×óµİ¹é
+        // æ¶ˆé™¤ç›´æ¥å·¦é€’å½’
         map<char, vector<string> > tem_p;
         int tem_len = g.Vn.size();
         for (int z = 0; z < tem_len; z++) {
@@ -189,7 +189,7 @@ void remove_left_recursion(grammar &g) {
 
     }
     print_G(g);
-    // »¯¼ò
+    // åŒ–ç®€
     simplify(g);
 }
 
@@ -199,8 +199,8 @@ void remove_left_recursion(grammar &g) {
 
 
 // ******************************************************************
-// Ïû³ı»ØËİ
-// ÌáÈ¡×óÒò×Ó
+// æ¶ˆé™¤å›æº¯
+// æå–å·¦å› å­
 // ******************************************************************
 void remove_left_gene(grammar &g) {
     map<char, vector<int> > m;
@@ -235,14 +235,14 @@ void remove_left_gene(grammar &g) {
 
 
 // ******************************************************************
-// ¶ÁÈëÒ»¾ä
+// è¯»å…¥ä¸€å¥
 // ******************************************************************
 void scanG(FILE* fpi, grammar &g) {
     if (feof(fpi))		return;
 
     char ch;
-    char start;// ¼ÇÂ¼²úÉúÊ½¿ªÍ·µÄ·ÇÖÕ½á·û
-    string tem;// ¼ÇÂ¼¶ÔÓ¦ºòÑ¡Ê½
+    char start;// è®°å½•äº§ç”Ÿå¼å¼€å¤´çš„éç»ˆç»“ç¬¦
+    string tem;// è®°å½•å¯¹åº”å€™é€‰å¼
 
     ch = GetBC(fpi);
     if (ch >= 'A' && ch <= 'Z') {
@@ -286,21 +286,21 @@ void scanG(FILE* fpi, grammar &g) {
 }
 
 // ******************************************************************
-// ÇóFIRST¼¯
+// æ±‚FIRSTé›†
 // ******************************************************************
 map<char, set<char> > FIRST;
 void getFIRST(grammar g) {
-    // Èç¹û·ûºÅÊÇÒ»¸öÖÕ½á·û
+    // å¦‚æœç¬¦å·æ˜¯ä¸€ä¸ªç»ˆç»“ç¬¦
     for (int i = 0; i < g.Vt.size(); i++) {
         FIRST[g.Vt[i]].insert(g.Vt[i]);
     }
-    // Èç¹ûÒ»¸ö·ûºÅÊÇÒ»¸ö·ÇÖÕ½á·ûºÅ
-    // X->a..., °Ña¼ÓÈëFIRST(X), ÈôX->@, °Ñ@Ò²¼ÓÈëFIRST(X)               1
-    // X->Y..., °ÑFIRST(Y)/@¼ÓÈëFIRST(X)                               2
-    // X->Y1Y2Y3...Yi...Yk, FIRST(Yi)¶¼º¬@, Ôò°ÑFIRST(Yi)/@¼ÓÈëFIRST(X) 3
-    // Èô¶¼ÓĞ@, Ôò°Ñ@Ò²¼ÓÈë FIRST(X)                                     4
+    // å¦‚æœä¸€ä¸ªç¬¦å·æ˜¯ä¸€ä¸ªéç»ˆç»“ç¬¦å·
+    // X->a..., æŠŠaåŠ å…¥FIRST(X), è‹¥X->@, æŠŠ@ä¹ŸåŠ å…¥FIRST(X)               1
+    // X->Y..., æŠŠFIRST(Y)/@åŠ å…¥FIRST(X)                               2
+    // X->Y1Y2Y3...Yi...Yk, FIRST(Yi)éƒ½å«@, åˆ™æŠŠFIRST(Yi)/@åŠ å…¥FIRST(X) 3
+    // è‹¥éƒ½æœ‰@, åˆ™æŠŠ@ä¹ŸåŠ å…¥ FIRST(X)                                     4
 
-    map<char, set<char> > copy = FIRST; // FIRST¼¯µÄ¿½±´
+    map<char, set<char> > copy = FIRST; // FIRSTé›†çš„æ‹·è´
     while (true) {
 
         for (int i = 0; i < g.Vn.size(); i++) {
@@ -328,7 +328,7 @@ void getFIRST(grammar g) {
         if (copy == FIRST) break;
         copy = FIRST;
     }
-    puts("\nFIRST¼¯");
+    puts("\nFIRSTé›†");
     for (auto it : FIRST) {
         cout << it.first << ":";
         for (auto itm : it.second)
@@ -338,14 +338,14 @@ void getFIRST(grammar g) {
 }
 
 // ******************************************************************
-// ÇóFOLLOW¼¯
+// æ±‚FOLLOWé›†
 // ******************************************************************
 map<char, set<char> > FOLLOW;
 void getFOLLOW(grammar g) {
-    // # ÖÁÓÚ FOLLOW(S)
+    // # è‡³äº FOLLOW(S)
     FOLLOW[g.S].insert('#');
-    // A->aBb, °ÑFIRST(b)\@¼ÓÈëFOLLOW(B)
-    // A->aB, »òA->aBb¶øb=>@(FIRST[b]°üº¬@), °ÑFOLLOW(A)¼ÓÈëFOLLOW(B)
+    // A->aBb, æŠŠFIRST(b)\@åŠ å…¥FOLLOW(B)
+    // A->aB, æˆ–A->aBbè€Œb=>@(FIRST[b]åŒ…å«@), æŠŠFOLLOW(A)åŠ å…¥FOLLOW(B)
     map<char, set<char> > copy = FOLLOW;
     while (true) {
         for (int i = 0; i < g.Vn.size(); i++) {
@@ -375,7 +375,7 @@ void getFOLLOW(grammar g) {
         copy = FOLLOW;
     }
 
-    puts("\nFOLLOW¼¯");
+    puts("\nFOLLOWé›†");
     for (auto it : FOLLOW) {
         cout << it.first << ":";
         for (auto itm : it.second)
@@ -385,10 +385,10 @@ void getFOLLOW(grammar g) {
 }
 
 // ******************************************************************
-// ½¨Ô¤²â·ÖÎö±í
+// å»ºé¢„æµ‹åˆ†æè¡¨
 // ******************************************************************
 
-// ·ÇÖÕ½á·û ÖÕ½á·û ²úÉúÊ½
+// éç»ˆç»“ç¬¦ ç»ˆç»“ç¬¦ äº§ç”Ÿå¼
 map<pair<char, char>, string> table;
 
 void getTable(grammar g) {
@@ -424,21 +424,21 @@ void getTable(grammar g) {
 
 }
 bool error(string str) {
-//    cout << "³ö´íÀ²!!!!!!!!!!!!!!!!!" << endl;
+//    cout << "å‡ºé”™å•¦!!!!!!!!!!!!!!!!!" << endl;
     cout << str << endl;
     return false;
 }
 
 // ******************************************************************
-// Ô¤²â·ÖÎö
+// é¢„æµ‹åˆ†æ
 // ******************************************************************
 bool analysis(grammar g, string str) {
     str += '#';
-    // 1.top = a = '#',·ÖÎö³É¹¦
+    // 1.top = a = '#',åˆ†ææˆåŠŸ
     // 2.top = a != '#', STACK.pop(), index++
-    // 3.topÊÇ·ÇÖÕ½á·û
-    // Èôtable[top, a]´æ·ÅÒ»¸ö²úÉúÊ½, STACK.pop(), ²úÉúÊ½ÓÒ²¿·´Ğò½øÕ», (ÈôÓÒÎª¿ÕÔò²»ÍÆÊ²Ã´½øÕ»)
-    // Èôtable[top, a]´æ·Å³ö´í±êÖ¾Ôòµ÷ÓÃERROR
+    // 3.topæ˜¯éç»ˆç»“ç¬¦
+    // è‹¥table[top, a]å­˜æ”¾ä¸€ä¸ªäº§ç”Ÿå¼, STACK.pop(), äº§ç”Ÿå¼å³éƒ¨ååºè¿›æ ˆ, (è‹¥å³ä¸ºç©ºåˆ™ä¸æ¨ä»€ä¹ˆè¿›æ ˆ)
+    // è‹¥table[top, a]å­˜æ”¾å‡ºé”™æ ‡å¿—åˆ™è°ƒç”¨ERROR
     stack<char> STACK;
     int index = 0;
     STACK.push('#');
@@ -476,7 +476,7 @@ bool analysis(grammar g, string str) {
 }
 
 // ******************************************************************
-// ´Ê·¨·ÖÎöÆ÷Ä£¿é
+// è¯æ³•åˆ†æå™¨æ¨¡å—
 // ******************************************************************
 const int KEY_LEN = 25;
 const int SYMBOLS_LEN = 19;
@@ -506,24 +506,24 @@ bool IsSymbols(char c) {
     return false;
 }
 
-// ÅĞ¶Ï¹Ø¼ü×Ö
+// åˆ¤æ–­å…³é”®å­—
 bool IsKey(string c) {
     for (int i = 0; i < KEY_LEN; i++)
         if (key[i] == c)
             return true;
     return false;
 }
-// ÅĞ¶ÏÊÇ·ñÎª×ÖÄ¸
+// åˆ¤æ–­æ˜¯å¦ä¸ºå­—æ¯
 bool IsLetter(char c) {
     return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';
 }
 
-//ÅĞ¶ÏÊÇ·ñÎªa~f×ÖÄ¸
+//åˆ¤æ–­æ˜¯å¦ä¸ºa~få­—æ¯
 bool IsA_F(char c) {
     return c >= 'a' && c <= 'f' || c >= 'A' && c <= 'F';
 }
 
-//ÅĞ¶ÏÊÇ·ñÎªÊı×Ö
+//åˆ¤æ–­æ˜¯å¦ä¸ºæ•°å­—
 bool IsDigit(char c) {
     return c >= '0' && c <= '9';
 }
@@ -603,7 +603,7 @@ string lexical(string str) {
                     }
                 }
                 if (!flag)
-                    cout << "<" << ch << " ,ÎŞ·¨Ê¶±ğ¸Ã×Ö·û>" << endl;
+                    cout << "<" << ch << " ,æ— æ³•è¯†åˆ«è¯¥å­—ç¬¦>" << endl;
             }
             res += tem;
         }
@@ -618,7 +618,7 @@ grammar grammar_read(const char *path) {
 //        R"(D:\work\clion\POC\sy2\sy2.txt)"
         if((fpin=fopen(path,"r"))!=NULL) break;
         else {
-            cout<<"ÎÄ¼şÂ·¾¶´íÎó\n";exit(-1);
+            cout<<"æ–‡ä»¶è·¯å¾„é”™è¯¯\n";exit(-1);
         }
     }
 //    cout << "hcs" << endl;
