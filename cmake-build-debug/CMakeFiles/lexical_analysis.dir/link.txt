@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/lexical_analysis.dir/sy1/lexical_analysis.cpp.o  -o lexical_analysis 

@@ -11,15 +11,15 @@ using namespace std;
 #endif //POC_GRAMMAR_2_H
 
 struct grammar {
-    string Vn;		//Vn  ???????????????
-    string Vt;		//Vt  ??????????????
-    char S{};			//S   ???????
-    map<char, vector<string> > P;//P   ?????
+    string Vn;		//Vn  文法的非终结符号集合
+    string Vt;		//Vt  文法的终结符号集合
+    char S{};			//S   开始符号
+    map<char, vector<string> > P;//P   产生式
 };
 
-// ??????????
+// 文法打印函数
 void print_G(grammar g) {
-    cout << "??? " << endl;
+    cout << "文法 " << endl;
     for (int i = 0; i < g.Vn.size(); i++) {
         char c = g.Vn[i];cout << c << "->";
         for (int j = 0; j < g.P[c].size(); j++) {
@@ -30,12 +30,12 @@ void print_G(grammar g) {
         }
         puts("");
     }
-    cout << "?????   " << g.S << endl;
-    cout << "?????? " << g.Vn << endl;
-    cout << "????   " << g.Vt << "\n\n";
+    cout << "开始符   " << g.S << endl;
+    cout << "非终结符 " << g.Vn << endl;
+    cout << "终结符   " << g.Vt << "\n\n";
 }
 
-// ?ж?????????????????c
+// 判断一个字符串是否有字符c
 bool exitV(string str, char c) {
     for (auto i : str)
         if (i == c)
@@ -52,7 +52,7 @@ bool is_Vt(char c) {
     return false;
 }
 
-// ????????????????
+// 用于读取一个非空格字符
 char GetBC(FILE* fpi) {
     char ch;
     do {
@@ -61,8 +61,8 @@ char GetBC(FILE* fpi) {
     return ch;
 }
 
-// ????????????
-// ??????????????
+// 用于消除左递归
+// 获取一个新的非终结符
 char get_Vn(string str) {
     for (int i = 0; i < 26; i++) {
         char c = (i + 'A');
@@ -71,7 +71,7 @@ char get_Vn(string str) {
     return ' ';
 }
 
-// ????????????????
+// 检查产生式右半部是否存在
 bool check_Vn_repeat(string s, vector<string> str) {
     for (auto it : str) {
         if (s == it) {
@@ -82,10 +82,10 @@ bool check_Vn_repeat(string s, vector<string> str) {
 }
 
 // ******************************************************************
-// ???????
+// 化简模块
 // ******************************************************************
 map<char, bool> vis;
-// ?????????????????ж???????????????????????ж??????????????????
+// 深度优先搜索，通过判断对开始符而言非终结符是否可达，来判断非终结符的产生式是否多余
 void dfs(grammar g, char c, string &res) {
     for (int i = 0; i < g.P[c].size(); i++) {
         for (int j = 0; j < g.P[c][i].size(); j++) {
@@ -100,7 +100,7 @@ void dfs(grammar g, char c, string &res) {
 }
 
 void simplify(grammar &g) {
-    string tem = ""; // ????????????????
+    string tem = ""; // 记录开始符可达的终结符
     vis.clear();
     tem += g.S;
     vis[g.S] = true;
@@ -124,15 +124,15 @@ void simplify(grammar &g) {
         }
     }
     g.Vn = st;
-    puts("\n????");
+    puts("\n化简");
     print_G(g);
 }
 
 // ******************************************************************
-// ????????
+// 消除左递归
 // ******************************************************************
 void remove_left_recursion(grammar &g) {
-    // ?滻
+    // 替换
     grammar new_g;
     new_g.S = g.S, new_g.Vn = g.Vn, new_g.Vt = g.Vt;
 
@@ -157,7 +157,7 @@ void remove_left_recursion(grammar &g) {
             new_g.P[c].clear();
         }
 
-        // ???????????
+        // 消除直接左递归
         map<char, vector<string> > tem_p;
         int tem_len = g.Vn.size();
         for (int z = 0; z < tem_len; z++) {
@@ -189,7 +189,7 @@ void remove_left_recursion(grammar &g) {
 
     }
     print_G(g);
-    // ????
+    // 化简
     simplify(g);
 }
 
@@ -199,8 +199,8 @@ void remove_left_recursion(grammar &g) {
 
 
 // ******************************************************************
-// ????????
-// ?????????
+// 消除回溯
+// 提取左因子
 // ******************************************************************
 void remove_left_gene(grammar &g) {
     map<char, vector<int> > m;
@@ -235,14 +235,14 @@ void remove_left_gene(grammar &g) {
 
 
 // ******************************************************************
-// ???????
+// 读入一句
 // ******************************************************************
 void scanG(FILE* fpi, grammar &g) {
     if (feof(fpi))		return;
 
     char ch;
-    char start;// ??????????????????
-    string tem;// ??????????
+    char start;// 记录产生式开头的非终结符
+    string tem;// 记录对应候选式
 
     ch = GetBC(fpi);
     if (ch >= 'A' && ch <= 'Z') {
@@ -286,21 +286,21 @@ void scanG(FILE* fpi, grammar &g) {
 }
 
 // ******************************************************************
-// ??FIRST??
+// 求FIRST集
 // ******************************************************************
 map<char, set<char> > FIRST;
 void getFIRST(grammar g) {
-    // ????????????????
+    // 如果符号是一个终结符
     for (int i = 0; i < g.Vt.size(); i++) {
         FIRST[g.Vt[i]].insert(g.Vt[i]);
     }
-    // ???????????????????????
-    // X->a..., ??a????FIRST(X), ??X->@, ??@?????FIRST(X)               1
-    // X->Y..., ??FIRST(Y)/@????FIRST(X)                               2
-    // X->Y1Y2Y3...Yi...Yk, FIRST(Yi)????@, ???FIRST(Yi)/@????FIRST(X) 3
-    // ??????@, ???@????? FIRST(X)                                     4
+    // 如果一个符号是一个非终结符号
+    // X->a..., 把a加入FIRST(X), 若X->@, 把@也加入FIRST(X)               1
+    // X->Y..., 把FIRST(Y)/@加入FIRST(X)                               2
+    // X->Y1Y2Y3...Yi...Yk, FIRST(Yi)都含@, 则把FIRST(Yi)/@加入FIRST(X) 3
+    // 若都有@, 则把@也加入 FIRST(X)                                     4
 
-    map<char, set<char> > copy = FIRST; // FIRST???????
+    map<char, set<char> > copy = FIRST; // FIRST集的拷贝
     while (true) {
 
         for (int i = 0; i < g.Vn.size(); i++) {
@@ -328,7 +328,7 @@ void getFIRST(grammar g) {
         if (copy == FIRST) break;
         copy = FIRST;
     }
-    puts("\nFIRST??");
+    puts("\nFIRST集");
     for (auto it : FIRST) {
         cout << it.first << ":";
         for (auto itm : it.second)
@@ -338,14 +338,14 @@ void getFIRST(grammar g) {
 }
 
 // ******************************************************************
-// ??FOLLOW??
+// 求FOLLOW集
 // ******************************************************************
 map<char, set<char> > FOLLOW;
 void getFOLLOW(grammar g) {
-    // # ???? FOLLOW(S)
+    // # 至于 FOLLOW(S)
     FOLLOW[g.S].insert('#');
-    // A->aBb, ??FIRST(b)\@????FOLLOW(B)
-    // A->aB, ??A->aBb??b=>@(FIRST[b]????@), ??FOLLOW(A)????FOLLOW(B)
+    // A->aBb, 把FIRST(b)\@加入FOLLOW(B)
+    // A->aB, 或A->aBb而b=>@(FIRST[b]包含@), 把FOLLOW(A)加入FOLLOW(B)
     map<char, set<char> > copy = FOLLOW;
     while (true) {
         for (int i = 0; i < g.Vn.size(); i++) {
@@ -375,7 +375,7 @@ void getFOLLOW(grammar g) {
         copy = FOLLOW;
     }
 
-    puts("\nFOLLOW??");
+    puts("\nFOLLOW集");
     for (auto it : FOLLOW) {
         cout << it.first << ":";
         for (auto itm : it.second)
@@ -385,10 +385,10 @@ void getFOLLOW(grammar g) {
 }
 
 // ******************************************************************
-// ??????????
+// 建预测分析表
 // ******************************************************************
 
-// ?????? ???? ?????
+// 非终结符 终结符 产生式
 map<pair<char, char>, string> table;
 
 void getTable(grammar g) {
@@ -424,21 +424,21 @@ void getTable(grammar g) {
 
 }
 bool error(string str) {
-//    cout << "??????!!!!!!!!!!!!!!!!!" << endl;
+//    cout << "出错啦!!!!!!!!!!!!!!!!!" << endl;
     cout << str << endl;
     return false;
 }
 
 // ******************************************************************
-// ??????
+// 预测分析
 // ******************************************************************
 bool analysis(grammar g, string str) {
     str += '#';
-    // 1.top = a = '#',???????
+    // 1.top = a = '#',分析成功
     // 2.top = a != '#', STACK.pop(), index++
-    // 3.top???????
-    // ??table[top, a]???????????, STACK.pop(), ??????????????, (????????????????)
-    // ??table[top, a]?????????????ERROR
+    // 3.top是非终结符
+    // 若table[top, a]存放一个产生式, STACK.pop(), 产生式右部反序进栈, (若右为空则不推什么进栈)
+    // 若table[top, a]存放出错标志则调用ERROR
     stack<char> STACK;
     int index = 0;
     STACK.push('#');
@@ -476,7 +476,7 @@ bool analysis(grammar g, string str) {
 }
 
 // ******************************************************************
-// ????????????
+// 词法分析器模块
 // ******************************************************************
 const int KEY_LEN = 25;
 const int SYMBOLS_LEN = 19;
@@ -506,24 +506,24 @@ bool IsSymbols(char c) {
     return false;
 }
 
-// ?ж?????
+// 判断关键字
 bool IsKey(string c) {
     for (int i = 0; i < KEY_LEN; i++)
         if (key[i] == c)
             return true;
     return false;
 }
-// ?ж????????
+// 判断是否为字母
 bool IsLetter(char c) {
     return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';
 }
 
-//?ж?????a~f???
+//判断是否为a~f字母
 bool IsA_F(char c) {
     return c >= 'a' && c <= 'f' || c >= 'A' && c <= 'F';
 }
 
-//?ж?????????
+//判断是否为数字
 bool IsDigit(char c) {
     return c >= '0' && c <= '9';
 }
@@ -603,7 +603,7 @@ string lexical(string str) {
                     }
                 }
                 if (!flag)
-                    cout << "<" << ch << " ,??????????>" << endl;
+                    cout << "<" << ch << " ,无法识别该字符>" << endl;
             }
             res += tem;
         }
@@ -618,7 +618,7 @@ grammar grammar_read(const char *path) {
 //        R"(D:\work\clion\POC\sy2\sy2.txt)"
         if((fpin=fopen(path,"r"))!=NULL) break;
         else {
-            cout<<"???·??????\n";exit(-1);
+            cout<<"文件路径错误\n";exit(-1);
         }
     }
 //    cout << "hcs" << endl;

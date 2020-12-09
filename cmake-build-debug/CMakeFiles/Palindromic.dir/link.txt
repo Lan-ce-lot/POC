@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/Palindromic.dir/al/Palindromic.cpp.o  -o Palindromic 
