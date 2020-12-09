@@ -12,12 +12,9 @@ grammar G;
 /**
  * S'->#S#
  */
-grammar change(grammar &G) {
-
+grammar change(grammar G) {
     char vn = get_Vn(G.Vn);
-    string tem = "#" + G.Vn.substr(0, 1);
-    tem += "#";
-    G.P[vn].push_back(tem);
+    G.P[vn].push_back("#" + G.Vn.substr(0, 1) + "#");
     G.S = vn;
     G.Vt += '#';
     G.Vn = G.S + G.Vn;
@@ -137,16 +134,17 @@ void getPriorityRelationshipTable(grammar G) {
         }
     }
     // 打印
-    cout << "优先关系表\n   ";
-    for (auto x : G.Vt) cout << x << "  ";
+    cout << "优先关系表\n    ";
+    for (auto x : G.Vt) cout << x << "   ";
     puts("");
     for (auto x : G.Vt) {
-        cout << x << "  ";
+        cout << x << "   ";
         for (auto y : G.Vt) {
-            cout << relationshipTable[{x, y}] << "  ";
+            cout << relationshipTable[{x, y}] << "   ";
         }
         cout << '\n';
     }
+    puts("");
 
 }
 
@@ -154,8 +152,37 @@ void getPriorityRelationshipTable(grammar G) {
  * 算符优先分析
  */
 bool ERROR() {
-    cout << "出错了!!!!!!!!!!" << endl;
+//    cout << "出错了!!!!!!!!!!" << endl;
     return false;
+}
+/**
+ * 归约
+ * @return
+ */
+char reduction(grammar G, string str) {
+    for (auto vn : G.Vn) {
+        for (auto p : G.P[vn]) {
+            if (str.size() != p.size()) continue;
+            for (int i = 0; i < p.size(); i++) {
+                if (is_Vt(str[i])) {
+                    if (p[i] != str[i]) {
+//                        flag = 0;
+                        break;
+//                        return ' ';
+                    }
+                } else if (i != p.size() - 1 && !is_Vt(p[i])){
+                    continue;
+                }
+
+                if (i == p.size() - 1) {
+                    return vn;
+                }
+            }
+        }
+    }
+    return ' ';
+//    ERROR();
+//    return ;
 }
 
 bool operatorPrecedenceAnalysis(grammar G, string str) {
@@ -179,10 +206,19 @@ bool operatorPrecedenceAnalysis(grammar G, string str) {
             }
             /**
              * 归约
-             * S[j + 1]...S[k]归约成N
+             * S[j + 1]...S[top]归约成N
              */
+            string tem = "";
+            for (int i = j + 1; i <= top; i++) {
+                tem += S[i];
+            }
+//            cout << tem << endl;
             top = j + 1;
-            S[top] = G.S;
+//            S[top] = G.S;
+            char ch = reduction(G, tem);
+//            cout <<  << endl;
+            if (ch == ' ') return ERROR();
+            S[top] = ch;
         }
         if (relationshipTable[{S[j], a}] == '<' || relationshipTable[{S[j], a}] == '=') {
             top++;
@@ -192,18 +228,19 @@ bool operatorPrecedenceAnalysis(grammar G, string str) {
     }
     return true;
 }
-
+// i+(*i+i)
+// ((i+i)**i)+i
 int main() {
     char ch;
     G = grammar_read("D:\\work\\clion\\POC\\sy3\\1.txt");
-    change(G);
+    G = change(G);
 
     print_G(G);
 
     getFIRSTVT(G);
     getLASTVT(G);
     getPriorityRelationshipTable(G);
-//    cout << operatorPrecedenceAnalysis(G, "i+i");
+//    cout << operatorPrecedenceAnalysis(G, "((i+i)**i)+i");
 
     FILE* fpin2;
     if((fpin2=fopen(R"(D:\work\clion\POC\sy3\jz.txt)","r"))==NULL) {
