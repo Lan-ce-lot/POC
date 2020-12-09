@@ -21,7 +21,7 @@ grammar change(grammar G) {
     return G;
 }
 /**
- * ÇóFIRSTVT
+ * æ±‚FIRSTVT
  */
 map<char, set<char> > FIRSTVT;
 map<pair<char, char>, bool> F;
@@ -52,13 +52,13 @@ void getFIRSTVT(grammar G) {
                 if (a[0] == top.first)
                     insert(vn, top.second);
     }
-    // ¶şÎ¬Êı×é×ªÎª¼¯ºÏ
+    // äºŒç»´æ•°ç»„è½¬ä¸ºé›†åˆ
     for (auto vn : G.Vn)
         for (auto vt : G.Vt)
             if (F[{vn, vt}])
                 FIRSTVT[vn].insert(vt);
-    // ´òÓ¡
-    cout << "FIRSTVT¼¯ºÏ:" << endl;
+    // æ‰“å°
+    cout << "FIRSTVTé›†åˆ:" << endl;
     for (auto it : FIRSTVT) {
         cout << "FIRSTVT(" << it.first << ')' << " : ";
         for (auto setIt : it.second)
@@ -69,7 +69,7 @@ void getFIRSTVT(grammar G) {
 }
 
 /**
- * ÇóLASTVT
+ * æ±‚LASTVT
  */
 map<char, set<char> > LASTVT;
 void getLASTVT(grammar G) {
@@ -90,13 +90,13 @@ void getLASTVT(grammar G) {
                 if (a[a.size() - 1] == top.first)
                     insert(vn, top.second);
     }
-    // ¶şÎ¬Êı×é×ªÎª¼¯ºÏ
+    // äºŒç»´æ•°ç»„è½¬ä¸ºé›†åˆ
     for (auto vn : G.Vn)
         for (auto vt : G.Vt)
             if (F[{vn, vt}])
                 LASTVT[vn].insert(vt);
-    // ´òÓ¡
-    cout << "LASTVT¼¯ºÏ:" << endl;
+    // æ‰“å°
+    cout << "LASTVTé›†åˆ:" << endl;
     for (auto it : LASTVT) {
         cout << "LASTVT(" << it.first << ')' << " : ";
         for (auto setIt : it.second)
@@ -108,7 +108,7 @@ void getLASTVT(grammar G) {
 
 
 /**
- * ¹¹ÔìÓÅÏÈ¹ØÏµ±í
+ * æ„é€ ä¼˜å…ˆå…³ç³»è¡¨
  */
 map<pair<char, char>, char> relationshipTable;
 void getPriorityRelationshipTable(grammar G) {
@@ -116,25 +116,25 @@ void getPriorityRelationshipTable(grammar G) {
         for (auto x : G.P[vn]) {
 
             for (int i = 0; i < x.size() - 1; i++) {
-                // XiºÍXi+1¾ùÎªÖÕ½á·û, ÖÃXi=Xi+1
+                // Xiå’ŒXi+1å‡ä¸ºç»ˆç»“ç¬¦, ç½®Xi=Xi+1
                 if (is_Vt(x[i]) && is_Vt(x[i + 1]))
                     relationshipTable[{x[i], x[i + 1]}] = '=';
-                // i¡Ün-2ÇÒXiºÍXi+2¶¼ÎªÖÕ½á·û£¬µ«Xi+1Îª·ÇÖÕ½á·û, ÖÃXi=Xi+2:
+                // iâ‰¤n-2ä¸”Xiå’ŒXi+2éƒ½ä¸ºç»ˆç»“ç¬¦ï¼Œä½†Xi+1ä¸ºéç»ˆç»“ç¬¦, ç½®Xi=Xi+2:
                 if (i <= x.size() - 2 && is_Vt(x[i]) && is_Vt(x[i + 2]) && !is_Vt(x[i + 1]))
                     relationshipTable[{x[i], x[i + 2]}] = '=';
-                // XiÎªÖÕ½á·û¶øXi+1Îª·ÇÖÕ½á·ûXi<FIRSTVT(Xi+1)
+                // Xiä¸ºç»ˆç»“ç¬¦è€ŒXi+1ä¸ºéç»ˆç»“ç¬¦Xi<FIRSTVT(Xi+1)
                 if (is_Vt(x[i]) && !is_Vt(x[i + 1]))
                     for (auto it : FIRSTVT[x[i + 1]])
                         relationshipTable[{x[i], it}] = '<';
-                // XiÎª·ÇÖÕ½á·û¶øXi+1ÎªÖÕ½á·ûLASTVT(Xi)>Xi+1
+                // Xiä¸ºéç»ˆç»“ç¬¦è€ŒXi+1ä¸ºç»ˆç»“ç¬¦LASTVT(Xi)>Xi+1
                 if (!is_Vt(x[i]) && is_Vt(x[i + 1]))
                     for (auto it : LASTVT[x[i]])
                         relationshipTable[{it, x[i + 1]}] = '>';
             }
         }
     }
-    // ´òÓ¡
-    cout << "ÓÅÏÈ¹ØÏµ±í\n    ";
+    // æ‰“å°
+    cout << "ä¼˜å…ˆå…³ç³»è¡¨\n    ";
     for (auto x : G.Vt) cout << x << "   ";
     puts("");
     for (auto x : G.Vt) {
@@ -149,14 +149,14 @@ void getPriorityRelationshipTable(grammar G) {
 }
 
 /**
- * Ëã·ûÓÅÏÈ·ÖÎö
+ * ç®—ç¬¦ä¼˜å…ˆåˆ†æ
  */
 bool ERROR() {
-//    cout << "³ö´íÁË!!!!!!!!!!" << endl;
+//    cout << "å‡ºé”™äº†!!!!!!!!!!" << endl;
     return false;
 }
 /**
- * ¹éÔ¼
+ * å½’çº¦
  * @return
  */
 char reduction(grammar G, string str) {
@@ -187,7 +187,7 @@ char reduction(grammar G, string str) {
 
 bool operatorPrecedenceAnalysis(grammar G, string str) {
     str = str + "#";
-    // top Ö¸ÏòÕ»¶¥£¬jÖ¸Ïò×î½Ó½üÕ»¶¥µÄÖÕ½á·û
+    // top æŒ‡å‘æ ˆé¡¶ï¼ŒjæŒ‡å‘æœ€æ¥è¿‘æ ˆé¡¶çš„ç»ˆç»“ç¬¦
     int top = 1, j = 0, index = 0;
     char a;
     char S[MAXX];
@@ -205,8 +205,8 @@ bool operatorPrecedenceAnalysis(grammar G, string str) {
                 }
             }
             /**
-             * ¹éÔ¼
-             * S[j + 1]...S[top]¹éÔ¼³ÉN
+             * å½’çº¦
+             * S[j + 1]...S[top]å½’çº¦æˆN
              */
             string tem = "";
             for (int i = j + 1; i <= top; i++) {
@@ -244,7 +244,7 @@ int main() {
 
     FILE* fpin2;
     if((fpin2=fopen(R"(D:\work\clion\POC\sy3\jz.txt)","r"))==NULL) {
-        cout<<"ÎÄ¼şÂ·¾¶´íÎó\n";
+        cout<<"æ–‡ä»¶è·¯å¾„é”™è¯¯\n";
         return 0;
     }
     string str = "";
@@ -266,7 +266,7 @@ int main() {
     for (auto it : query) cout << it << endl;
     for (int i = 0; i < query.size(); i++) {
         cout << copy[i] << endl;
-        cout << (operatorPrecedenceAnalysis(G, query[i]) ? "ÕıÈ·" : "´íÎó") << endl;
+        cout << (operatorPrecedenceAnalysis(G, query[i]) ? "æ­£ç¡®" : "é”™è¯¯") << endl;
     }
     return 0;
 }
