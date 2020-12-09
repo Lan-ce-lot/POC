@@ -116,6 +116,7 @@ fabric.properties
 # CMake ================================
 bin/
 build/
+cmake-build-debug/
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
