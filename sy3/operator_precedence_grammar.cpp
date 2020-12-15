@@ -228,12 +228,15 @@ bool operatorPrecedenceAnalysis(grammar G, string str) {
                 tem += S[i];
             }
 //            cout << tem << endl;
-            top = j + 1;
-            char ch = reduction(G, tem);
-            if (ch == ' ') return ERROR();
-            S[top] = ch;
 //            top = j + 1;
-//            S[top] = G.S;
+//            char ch = reduction(G, tem);
+//            if (ch == ' ') return ERROR();
+//            S[top] = ch;
+            /**
+             * @TODO ((ab3+de4)**5)+1;
+             */
+            top = j + 1;
+            S[top] = G.S;
         }
         if (relationshipTable[{S[j], a}] == '<' || relationshipTable[{S[j], a}] == '=') {
             top++;
