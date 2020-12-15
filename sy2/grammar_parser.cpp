@@ -672,5 +672,6 @@ int main() {
         cout << copy[i] << endl;
         cout << (analysis(g, query[i]) ? "正确" : "错误") << endl;
     }
+//    cout << (analysis(g, "(i+i)*i+(i+i*i)")) << endl;
     return 0;
 }

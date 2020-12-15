@@ -169,6 +169,19 @@ POC/fast:
 .PHONY : POC/fast
 
 #=============================================================================
+# Target rules for targets named bank
+
+# Build rule for target.
+bank: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 bank
+.PHONY : bank
+
+# fast build rule for target.
+bank/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bank.dir\build.make CMakeFiles/bank.dir/build
+.PHONY : bank/fast
+
+#=============================================================================
 # Target rules for targets named CMakeCXXCompilerId
 
 # Build rule for target.
@@ -180,19 +193,6 @@ CMakeCXXCompilerId: cmake_check_build_system
 CMakeCXXCompilerId/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeCXXCompilerId.dir\build.make CMakeFiles/CMakeCXXCompilerId.dir/build
 .PHONY : CMakeCXXCompilerId/fast
-
-#=============================================================================
-# Target rules for targets named operator_precedence_grammar
-
-# Build rule for target.
-operator_precedence_grammar: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 operator_precedence_grammar
-.PHONY : operator_precedence_grammar
-
-# fast build rule for target.
-operator_precedence_grammar/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\operator_precedence_grammar.dir\build.make CMakeFiles/operator_precedence_grammar.dir/build
-.PHONY : operator_precedence_grammar/fast
 
 #=============================================================================
 # Target rules for targets named main
@@ -233,6 +233,32 @@ grammar_parser/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\grammar_parser.dir\build.make CMakeFiles/grammar_parser.dir/build
 .PHONY : grammar_parser/fast
 
+#=============================================================================
+# Target rules for targets named sy2_3
+
+# Build rule for target.
+sy2_3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 sy2_3
+.PHONY : sy2_3
+
+# fast build rule for target.
+sy2_3/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sy2_3.dir\build.make CMakeFiles/sy2_3.dir/build
+.PHONY : sy2_3/fast
+
+#=============================================================================
+# Target rules for targets named operator_precedence_grammar
+
+# Build rule for target.
+operator_precedence_grammar: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 operator_precedence_grammar
+.PHONY : operator_precedence_grammar
+
+# fast build rule for target.
+operator_precedence_grammar/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\operator_precedence_grammar.dir\build.make CMakeFiles/operator_precedence_grammar.dir/build
+.PHONY : operator_precedence_grammar/fast
+
 CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.obj: CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.obj
 
 .PHONY : CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.obj
@@ -259,6 +285,33 @@ CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.s: CMakeFiles/3.17.3/Compiler
 CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeCXXCompilerId.dir\build.make CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
 .PHONY : CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+
+al/bank.obj: al/bank.cpp.obj
+
+.PHONY : al/bank.obj
+
+# target to build an object file
+al/bank.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bank.dir\build.make CMakeFiles/bank.dir/al/bank.cpp.obj
+.PHONY : al/bank.cpp.obj
+
+al/bank.i: al/bank.cpp.i
+
+.PHONY : al/bank.i
+
+# target to preprocess a source file
+al/bank.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bank.dir\build.make CMakeFiles/bank.dir/al/bank.cpp.i
+.PHONY : al/bank.cpp.i
+
+al/bank.s: al/bank.cpp.s
+
+.PHONY : al/bank.s
+
+# target to generate assembly for a file
+al/bank.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bank.dir\build.make CMakeFiles/bank.dir/al/bank.cpp.s
+.PHONY : al/bank.cpp.s
 
 al/dp2.obj: al/dp2.cpp.obj
 
@@ -398,6 +451,33 @@ sy2/grammar_parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\grammar_parser.dir\build.make CMakeFiles/grammar_parser.dir/sy2/grammar_parser.cpp.s
 .PHONY : sy2/grammar_parser.cpp.s
 
+sy2/sy2_3.obj: sy2/sy2_3.cpp.obj
+
+.PHONY : sy2/sy2_3.obj
+
+# target to build an object file
+sy2/sy2_3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sy2_3.dir\build.make CMakeFiles/sy2_3.dir/sy2/sy2_3.cpp.obj
+.PHONY : sy2/sy2_3.cpp.obj
+
+sy2/sy2_3.i: sy2/sy2_3.cpp.i
+
+.PHONY : sy2/sy2_3.i
+
+# target to preprocess a source file
+sy2/sy2_3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sy2_3.dir\build.make CMakeFiles/sy2_3.dir/sy2/sy2_3.cpp.i
+.PHONY : sy2/sy2_3.cpp.i
+
+sy2/sy2_3.s: sy2/sy2_3.cpp.s
+
+.PHONY : sy2/sy2_3.s
+
+# target to generate assembly for a file
+sy2/sy2_3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sy2_3.dir\build.make CMakeFiles/sy2_3.dir/sy2/sy2_3.cpp.s
+.PHONY : sy2/sy2_3.cpp.s
+
 sy3/operator_precedence_grammar.obj: sy3/operator_precedence_grammar.cpp.obj
 
 .PHONY : sy3/operator_precedence_grammar.obj
@@ -435,15 +515,20 @@ help:
 	@echo ... rebuild_cache
 	@echo ... CMakeCXXCompilerId
 	@echo ... POC
+	@echo ... bank
 	@echo ... dp2
 	@echo ... grammar_parser
 	@echo ... lexical_analysis
 	@echo ... main
 	@echo ... operator_precedence_grammar
+	@echo ... sy2_3
 	@echo ... tx
 	@echo ... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.obj
 	@echo ... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.i
 	@echo ... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.s
+	@echo ... al/bank.obj
+	@echo ... al/bank.i
+	@echo ... al/bank.s
 	@echo ... al/dp2.obj
 	@echo ... al/dp2.i
 	@echo ... al/dp2.s
@@ -459,6 +544,9 @@ help:
 	@echo ... sy2/grammar_parser.obj
 	@echo ... sy2/grammar_parser.i
 	@echo ... sy2/grammar_parser.s
+	@echo ... sy2/sy2_3.obj
+	@echo ... sy2/sy2_3.i
+	@echo ... sy2/sy2_3.s
 	@echo ... sy3/operator_precedence_grammar.obj
 	@echo ... sy3/operator_precedence_grammar.i
 	@echo ... sy3/operator_precedence_grammar.s

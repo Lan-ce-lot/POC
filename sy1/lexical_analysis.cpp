@@ -135,7 +135,7 @@ int main() {
     FILE *fpin;
     cout << "词法分析器输出：" << endl;
     while (true) {
-        if ((fpin = fopen(R"(D:\work\clion\POC\sy1\test.txt)", "r")) != nullptr)
+        if ((fpin = fopen(R"(D:\work\clion\POC\sy1\1.txt)", "r")) != nullptr)
             break;
         else
             cout << "文件路径错误\n";

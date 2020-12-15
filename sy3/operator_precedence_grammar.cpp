@@ -10,7 +10,7 @@ const int MAXX = 550;
 grammar G;
 
 /**
- * S'->#S#
+ * 加入产生式S'->#S#
  */
 grammar change(grammar G) {
     char vn = get_Vn(G.Vn);
@@ -20,6 +20,7 @@ grammar change(grammar G) {
     G.Vn = G.S + G.Vn;
     return G;
 }
+
 /**
  * 求FIRSTVT
  */
@@ -39,11 +40,13 @@ void getFIRSTVT(grammar G) {
     F.clear();
     for (auto vn : G.Vn)
         for (auto a : G.P[vn])
+            // P->a..., a加入FIRSTVT(P)
             if (is_Vt(a[0]))
                 insert(vn, a[0]);
+            // P->Qa..., a加入FIRSTVT(P)
             else if (is_Vt(a[1]))
                 insert(vn, a[1]);
-
+    // P->Q..., 且a属于FIRSTVT(Q), a加入FIRSTVT(P)
     while (!S.empty()) {
         auto top = S.top();
         S.pop();
@@ -72,6 +75,7 @@ void getFIRSTVT(grammar G) {
  * 求LASTVT
  */
 map<char, set<char> > LASTVT;
+
 void getLASTVT(grammar G) {
     LASTVT.clear();
     F.clear();
@@ -111,10 +115,10 @@ void getLASTVT(grammar G) {
  * 构造优先关系表
  */
 map<pair<char, char>, char> relationshipTable;
+
 void getPriorityRelationshipTable(grammar G) {
     for (auto vn : G.Vn) {
         for (auto x : G.P[vn]) {
-
             for (int i = 0; i < x.size() - 1; i++) {
                 // Xi和Xi+1均为终结符, 置Xi=Xi+1
                 if (is_Vt(x[i]) && is_Vt(x[i + 1]))
@@ -140,23 +144,31 @@ void getPriorityRelationshipTable(grammar G) {
     for (auto x : G.Vt) {
         cout << x << "   ";
         for (auto y : G.Vt) {
-            cout << relationshipTable[{x, y}] << "   ";
+            if (relationshipTable[{x, y}] != NULL) {
+                cout << relationshipTable[{x, y}];
+            } else {
+                cout << ' ';
+            }
+            cout << "   ";
         }
         cout << '\n';
     }
     puts("");
-
 }
 
 /**
- * 算符优先分析
+ * 算符优先分析模块
+ * @return
  */
 bool ERROR() {
 //    cout << "出错了!!!!!!!!!!" << endl;
     return false;
 }
+
 /**
  * 归约
+ * 非规范归约
+ * 精确匹配终结符
  * @return
  */
 char reduction(grammar G, string str) {
@@ -170,7 +182,7 @@ char reduction(grammar G, string str) {
                         break;
 //                        return ' ';
                     }
-                } else if (i != p.size() - 1 && !is_Vt(p[i])){
+                } else if (i != p.size() - 1 && !is_Vt(p[i])) {
                     continue;
                 }
 
@@ -185,6 +197,10 @@ char reduction(grammar G, string str) {
 //    return ;
 }
 
+/**
+ * 算符优先分析
+ * 课本上的伪代码
+ */
 bool operatorPrecedenceAnalysis(grammar G, string str) {
     str = str + "#";
     // top 指向栈顶，j指向最接近栈顶的终结符
@@ -199,7 +215,6 @@ bool operatorPrecedenceAnalysis(grammar G, string str) {
             while (true) {
                 char Q = S[j];
                 j = (is_Vt(S[j - 1]) ? j - 1 : j - 2);
-
                 if (relationshipTable[{S[j], Q}] == '<') {
                     break;
                 }
@@ -214,11 +229,11 @@ bool operatorPrecedenceAnalysis(grammar G, string str) {
             }
 //            cout << tem << endl;
             top = j + 1;
-//            S[top] = G.S;
             char ch = reduction(G, tem);
-//            cout <<  << endl;
             if (ch == ' ') return ERROR();
             S[top] = ch;
+//            top = j + 1;
+//            S[top] = G.S;
         }
         if (relationshipTable[{S[j], a}] == '<' || relationshipTable[{S[j], a}] == '=') {
             top++;
@@ -228,6 +243,7 @@ bool operatorPrecedenceAnalysis(grammar G, string str) {
     }
     return true;
 }
+
 // i+(*i+i)
 // ((i+i)**i)+i
 int main() {
@@ -242,9 +258,9 @@ int main() {
     getPriorityRelationshipTable(G);
 //    cout << operatorPrecedenceAnalysis(G, "((i+i)**i)+i");
 
-    FILE* fpin2;
-    if((fpin2=fopen(R"(D:\work\clion\POC\sy3\jz.txt)","r"))==NULL) {
-        cout<<"文件路径错误\n";
+    FILE *fpin2;
+    if ((fpin2 = fopen(R"(D:\work\clion\POC\sy3\jz.txt)", "r")) == NULL) {
+        cout << "文件路径错误\n";
         return 0;
     }
     string str = "";
@@ -268,5 +284,7 @@ int main() {
         cout << copy[i] << endl;
         cout << (operatorPrecedenceAnalysis(G, query[i]) ? "正确" : "错误") << endl;
     }
+
+//    cout << (operatorPrecedenceAnalysis(G, "(i+i)*i+(i+i*i)"));
     return 0;
 }
