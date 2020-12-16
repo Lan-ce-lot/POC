@@ -5,14 +5,15 @@
 #include<set>
 #include<stack>
 #include <algorithm>
+#include "../include/lexical_1.h"
 
 using namespace std;
 #define debug(a) cout << "*" << a << "*" << endl
 
 struct grammar {
-    string Vn;		//Vn  文法的非终结符号集合
-    string Vt;		//Vt  文法的终结符号集合
-    char S{};			//S   开始符号
+    string Vn;        //Vn  文法的非终结符号集合
+    string Vt;        //Vt  文法的终结符号集合
+    char S{};            //S   开始符号
     map<char, vector<string> > P;//P   产生式
 };
 
@@ -20,12 +21,13 @@ struct grammar {
 void print_G(grammar g) {
     cout << "文法 " << endl;
     for (int i = 0; i < g.Vn.size(); i++) {
-        char c = g.Vn[i];cout << c << "->";
+        char c = g.Vn[i];
+        cout << c << "->";
         for (int j = 0; j < g.P[c].size(); j++) {
             if (j != 0) {
-                cout << '|' ;
+                cout << '|';
             }
-            cout << g.P[c][j] ;
+            cout << g.P[c][j];
         }
         puts("");
     }
@@ -52,7 +54,7 @@ bool is_Vt(char c) {
 }
 
 // 用于读取一个非空格字符
-char GetBC(FILE* fpi) {
+char GetBC(FILE *fpi) {
     char ch;
     do {
         ch = fgetc(fpi);
@@ -84,6 +86,7 @@ bool check_Vn_repeat(string s, vector<string> str) {
 // 化简模块
 // ******************************************************************
 map<char, bool> vis;
+
 // 深度优先搜索，通过判断对开始符而言非终结符是否可达，来判断非终结符的产生式是否多余
 void dfs(grammar g, char c, string &res) {
     for (int i = 0; i < g.P[c].size(); i++) {
@@ -134,28 +137,22 @@ void remove_left_recursion(grammar &g) {
     // 替换
     grammar new_g;
     new_g.S = g.S, new_g.Vn = g.Vn, new_g.Vt = g.Vt;
-
     for (int i = 0; i < g.Vn.size(); i++) {
         char c = g.Vn[i]; // pi
         for (int j = 0; j <= i - 1; j++) {
-
             char tem = g.Vn[j]; // pj target
             for (int k = 0; k < g.P[c].size(); k++) {
                 if (g.P[c][k].find(tem, 0) == 0) {
                     for (int z = 0; z < g.P[tem].size(); z++) {
                         new_g.P[c].push_back(g.P[tem][z] + g.P[c][k].substr(1, g.P[c][k].size() - 1));
                     }
-                }
-                else if (!check_Vn_repeat(g.P[c][k], new_g.P[c])) {
-
+                } else if (!check_Vn_repeat(g.P[c][k], new_g.P[c])) {
                     new_g.P[c].push_back(g.P[c][k]);
                 }
-
             }
             g.P[c] = new_g.P[c];
             new_g.P[c].clear();
         }
-
         // 消除直接左递归
         map<char, vector<string> > tem_p;
         int tem_len = g.Vn.size();
@@ -174,7 +171,6 @@ void remove_left_recursion(grammar &g) {
                             g.P[new_c].push_back(g.P[c][k].substr(1, g.P[c][k].size() - 1) + new_c);
                         }
                     }
-
                     g.P[new_c].push_back("@");
                     if (!exitV(g.Vt, '@')) {
                         g.Vt += "@";
@@ -185,7 +181,6 @@ void remove_left_recursion(grammar &g) {
                 }
             }
         }
-
     }
     print_G(g);
     // 化简
@@ -223,7 +218,7 @@ void remove_left_gene(grammar &g) {
                 for (auto it1 : it.second) {
                     g.P[c].erase(g.P[c].begin() + it1);
                 }
-                string s(1,new_Vn);
+                string s(1, new_Vn);
                 g.P[c].push_back(it.first + s);
             }
         }
@@ -236,8 +231,8 @@ void remove_left_gene(grammar &g) {
 // ******************************************************************
 // 读入一句
 // ******************************************************************
-void scanG(FILE* fpi, grammar &g) {
-    if (feof(fpi))		return;
+void scanG(FILE *fpi, grammar &g) {
+    if (feof(fpi)) return;
 
     char ch;
     char start;// 记录产生式开头的非终结符
@@ -288,6 +283,7 @@ void scanG(FILE* fpi, grammar &g) {
 // 求FIRST集
 // ******************************************************************
 map<char, set<char> > FIRST;
+
 void getFIRST(grammar g) {
     // 如果符号是一个终结符
     for (int i = 0; i < g.Vt.size(); i++) {
@@ -340,6 +336,7 @@ void getFIRST(grammar g) {
 // 求FOLLOW集
 // ******************************************************************
 map<char, set<char> > FOLLOW;
+
 void getFOLLOW(grammar g) {
     // # 至于 FOLLOW(S)
     FOLLOW[g.S].insert('#');
@@ -422,6 +419,7 @@ void getTable(grammar g) {
     }
 
 }
+
 bool error(string str) {
 //    cout << "出错啦!!!!!!!!!!!!!!!!!" << endl;
     cout << str << endl;
@@ -474,150 +472,16 @@ bool analysis(grammar g, string str) {
     return true;
 }
 
-// ******************************************************************
-// 词法分析器模块
-// ******************************************************************
-const int KEY_LEN = 25;
-const int SYMBOLS_LEN = 19;
-string key[] = {"if", "then", "else", "while", "do",
-                "auto", "break", "char", "const","continue",
-                "default", "double","float", "for","int",
-                "long", "return", "signed","sizeof", "static",
-                "struct", "switch", "typedef", "unsigned", "void"};
-
-char symbols[SYMBOLS_LEN] = {'+', '-', '*', '/', '>',
-                             '<', '=', '(', ')', ';',
-                             '^', '[', ']', '"', '\'',
-                             '{', '}', ','};
-const int CHECK_1_LEN = 4;
-const int CHECK_2_LEN = 13;
-char check_1[] = {'>', '<', '=', '/'};
-char check_2[] = {'(', ')', ';', '[', ']', '"', '\'', '{', '}', ',', '*', '+', '-'};
-map<char, string> M{{'>', "="},
-                    {'<', "="},
-                    {'=', "=="},
-                    {'/', "/"}};
-
-bool IsSymbols(char c) {
-    for (int i = 0; i < SYMBOLS_LEN; i++)
-        if (symbols[i] == c)
-            return true;
-    return false;
-}
-
-// 判断关键字
-bool IsKey(string c) {
-    for (int i = 0; i < KEY_LEN; i++)
-        if (key[i] == c)
-            return true;
-    return false;
-}
-// 判断是否为字母
-bool IsLetter(char c) {
-    return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';
-}
-
-//判断是否为a~f字母
-bool IsA_F(char c) {
-    return c >= 'a' && c <= 'f' || c >= 'A' && c <= 'F';
-}
-
-//判断是否为数字
-bool IsDigit(char c) {
-    return c >= '0' && c <= '9';
-}
-
-string lexical(string str) {
-    string res;
-    char ch;
-    int index = -1;
-    int l = str.size();
-    while (++index < l) {
-        ch = str[index];
-        string tem;
-        if (ch != ' ' && ch != '\t' && ch != '\n') {
-            if (IsLetter(ch) || ch == '_') {
-                tem += ch;
-                while (ch = str[++index], index < l && (IsLetter(ch) || ch == '_' || IsDigit(ch))) {
-                    tem += ch;
-                }
-                index--;
-                if (IsKey(tem)) cout << '<' << tem << " , " << "->" << endl;
-                else cout << '<' << "0" << " , " << tem << '>' << endl;
-                tem = "i";
-            } else if (IsDigit(ch)) {
-                if (ch == '0') {
-                    ch = str[index++];
-                    if (ch >= '0' && ch <= '7') {
-                        while(ch >= '0' && ch <= '7') {
-                            tem += ch;
-                            ch = str[index++];
-                        }
-                        index--;
-                        cout<<"<2 , " << tem << ">" <<endl;
-                        tem = "i";
-                    } else if (ch == 'x'){
-                        ch = str[index++];
-                        while(IsDigit(ch) || IsA_F(ch)) {
-                            tem += ch;
-                            ch = str[index++];
-                        }
-                        index--;
-                        cout<<"<3 , " << tem << ">" <<endl;
-                    }
-                } else {
-                    while (IsDigit(ch)) {
-                        tem += ch;
-                        ch = str[++index];
-                    }
-                    index--;
-                    cout<<"<1 , " << tem << ">" <<endl;
-                    tem = "i";
-                }
-            } else {
-                bool flag = false;
-                for (int i = 0; i < CHECK_2_LEN; i++) {
-                    if (ch == check_2[i]) {
-                        cout << "<" << ch << " , ->" << endl;tem += ch;
-                        flag = true;
-                        break;
-                    }
-                }
-                if (!flag) {
-                    for (int i = 0; i < CHECK_1_LEN; i++) {
-                        if (ch == check_1[i]) {
-                            string follow = M[ch];
-                            tem += ch;
-                            ch=str[++index];
-                            if (follow.find(ch) != string::npos) {
-                                flag = true;
-                                cout << "<" << tem + ch << " , ->" << endl;tem += ch;
-                            } else {
-                                flag = true;
-                                cout << "<" << tem << " , ->" << endl;tem += ch;
-                            }
-                            index--;
-                            break;
-                        }
-                    }
-                }
-                if (!flag)
-                    cout << "<" << ch << " ,无法识别该字符>" << endl;
-            }
-            res += tem;
-        }
-    }
-    return res;
-}
 
 int main() {
 
-    FILE * fpin;
+    FILE *fpin;
 
     while (true) {
-        if((fpin=fopen(R"(D:\work\clion\POC\sy2\sy2.txt)","r"))!=NULL) break;
+        if ((fpin = fopen(R"(D:\work\clion\POC\sy2\sy2.txt)", "r")) != NULL) break;
         else {
-            cout<<"文件路径错误\n";return 0;
+            cout << "文件路径错误\n";
+            return 0;
         }
     }
     grammar g;
@@ -645,9 +509,9 @@ int main() {
     getFOLLOW(g);
     getTable(g);
 
-    FILE* fpin2;
-    if((fpin2=fopen(R"(D:\work\clion\POC\sy2\jz.txt)","r"))==NULL) {
-        cout<<"文件路径错误\n";
+    FILE *fpin2;
+    if ((fpin2 = fopen(R"(D:\work\clion\POC\sy2\jz.txt)", "r")) == NULL) {
+        cout << "文件路径错误\n";
         return 0;
     }
     string str = "";
