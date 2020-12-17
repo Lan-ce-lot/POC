@@ -5,7 +5,7 @@
 #include<set>
 #include<stack>
 #include <algorithm>
-#include "../include/lexical_1.h"
+#include <lexical_1.h>
 
 using namespace std;
 #define debug(a) cout << "*" << a << "*" << endl
