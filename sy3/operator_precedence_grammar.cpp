@@ -40,13 +40,10 @@ void getFIRSTVT(grammar G) {
     F.clear();
     for (auto vn : G.Vn)
         for (auto a : G.P[vn])
-            // P->a..., a加入FIRSTVT(P)
             if (is_Vt(a[0]))
                 insert(vn, a[0]);
-            // P->Qa..., a加入FIRSTVT(P)
             else if (is_Vt(a[1]))
                 insert(vn, a[1]);
-    // P->Q..., 且a属于FIRSTVT(Q), a加入FIRSTVT(P)
     while (!S.empty()) {
         auto top = S.top();
         S.pop();
@@ -55,7 +52,6 @@ void getFIRSTVT(grammar G) {
                 if (a[0] == top.first)
                     insert(vn, top.second);
     }
-    // 二维数组转为集合
     for (auto vn : G.Vn)
         for (auto vt : G.Vt)
             if (F[{vn, vt}])
@@ -94,12 +90,10 @@ void getLASTVT(grammar G) {
                 if (a[a.size() - 1] == top.first)
                     insert(vn, top.second);
     }
-    // 二维数组转为集合
     for (auto vn : G.Vn)
         for (auto vt : G.Vt)
             if (F[{vn, vt}])
                 LASTVT[vn].insert(vt);
-    // 打印
     cout << "LASTVT集合:" << endl;
     for (auto it : LASTVT) {
         cout << "LASTVT(" << it.first << ')' << " : ";
@@ -120,17 +114,13 @@ void getPriorityRelationshipTable(grammar G) {
     for (auto vn : G.Vn) {
         for (auto x : G.P[vn]) {
             for (int i = 0; i < x.size() - 1; i++) {
-                // Xi和Xi+1均为终结符, 置Xi=Xi+1
                 if (is_Vt(x[i]) && is_Vt(x[i + 1]))
                     relationshipTable[{x[i], x[i + 1]}] = '=';
-                // i≤n-2且Xi和Xi+2都为终结符，但Xi+1为非终结符, 置Xi=Xi+2:
                 if (i <= x.size() - 2 && is_Vt(x[i]) && is_Vt(x[i + 2]) && !is_Vt(x[i + 1]))
                     relationshipTable[{x[i], x[i + 2]}] = '=';
-                // Xi为终结符而Xi+1为非终结符Xi<FIRSTVT(Xi+1)
                 if (is_Vt(x[i]) && !is_Vt(x[i + 1]))
                     for (auto it : FIRSTVT[x[i + 1]])
                         relationshipTable[{x[i], it}] = '<';
-                // Xi为非终结符而Xi+1为终结符LASTVT(Xi)>Xi+1
                 if (!is_Vt(x[i]) && is_Vt(x[i + 1]))
                     for (auto it : LASTVT[x[i]])
                         relationshipTable[{it, x[i + 1]}] = '>';
@@ -167,8 +157,6 @@ bool ERROR() {
 
 /**
  * 归约
- * 非规范归约
- * 精确匹配终结符
  * @return
  */
 char reduction(grammar G, string str) {
@@ -199,11 +187,9 @@ char reduction(grammar G, string str) {
 
 /**
  * 算符优先分析
- * 课本上的伪代码
  */
 bool operatorPrecedenceAnalysis(grammar G, string str) {
     str = str + "#";
-    // top 指向栈顶，j指向最接近栈顶的终结符
     int top = 1, j = 0, index = 0;
     char a;
     char S[MAXX];
@@ -219,10 +205,6 @@ bool operatorPrecedenceAnalysis(grammar G, string str) {
                     break;
                 }
             }
-            /**
-             * 归约
-             * S[j + 1]...S[top]归约成N
-             */
             string tem = "";
             for (int i = j + 1; i <= top; i++) {
                 tem += S[i];

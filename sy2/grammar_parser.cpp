@@ -87,7 +87,6 @@ bool check_Vn_repeat(string s, vector<string> str) {
 // ******************************************************************
 map<char, bool> vis;
 
-// 深度优先搜索，通过判断对开始符而言非终结符是否可达，来判断非终结符的产生式是否多余
 void dfs(grammar g, char c, string &res) {
     for (int i = 0; i < g.P[c].size(); i++) {
         for (int j = 0; j < g.P[c][i].size(); j++) {
@@ -155,7 +154,7 @@ void remove_left_recursion(grammar &g) {
         }
         map<char, vector<string> > tem_p;
         int tem_len = g.Vn.size();
-        for (int z = 0; z < tem_len; z++) {// 消除直接左递归
+        for (int z = 0; z < tem_len; z++) {
             tem_p.clear();
             char c = g.Vn[z];
             for (int j = 0; j < g.P[c].size(); j++) {
@@ -230,8 +229,8 @@ void scanG(FILE *fpi, grammar &g) {
     if (feof(fpi)) return;
 
     char ch;
-    char start;// 记录产生式开头的非终结符
-    string tem;// 记录对应候选式
+    char start;
+    string tem;
 
     ch = GetBC(fpi);
     if (ch >= 'A' && ch <= 'Z') {
@@ -279,12 +278,10 @@ void scanG(FILE *fpi, grammar &g) {
 // ******************************************************************
 map<char, set<char> > FIRST;
 void getFIRST(grammar g) {
-    // 如果符号是一个终结符. 加入自己的FIRST集
     for (int i = 0; i < g.Vt.size(); i++) {
         FIRST[g.Vt[i]].insert(g.Vt[i]);
     }
-    // 如果一个符号是一个非终结符号
-    map<char, set<char> > copy = FIRST; // FIRST集的拷贝
+    map<char, set<char> > copy = FIRST;
     while (true) {
 
         for (int i = 0; i < g.Vn.size(); i++) {
@@ -293,20 +290,16 @@ void getFIRST(grammar g) {
                 for (int k = 0; k < g.P[c][j].size(); k++) {
                     bool have_empty = false;
                     char tem = g.P[c][j][k];
-                    // X->a..., 把a加入FIRST(X), 若X->@, 把@也加入FIRST(X)
                     if (k == 0 && is_Vt(tem)) {
                         FIRST[c].insert(tem);
                         break;
                     } else if (exitV(g.Vn, tem)) {
-                        // X->Y..., 把FIRST(Y)/@加入FIRST(X)
                         for (auto it : FIRST[tem])
-                            // X->Y1Y2Y3...Yi...Yk, FIRST(Yi)都含@,
-                            // 则把FIRST(Yi)/@加入FIRST(X)
+
                             if (it != '@') FIRST[c].insert(it);
                             else have_empty = true;
                         if (!have_empty) break;
                     }
-                    // 若都有@, 则把@也加入 FIRST(X)
                     if (k == g.P[c][j].size() - 1 && exitV(g.Vn, tem) && have_empty) {
                         FIRST[c].insert('@');
                     }
@@ -331,10 +324,9 @@ void getFIRST(grammar g) {
 // ******************************************************************
 map<char, set<char> > FOLLOW;
 void getFOLLOW(grammar g) {
-    // # 至于 FOLLOW(S)
+
     FOLLOW[g.S].insert('#');
-    // A->aBb, 把FIRST(b)\@加入FOLLOW(B)
-    // A->aB, 或A->aBb而b=>@(FIRST[b]包含@), 把FOLLOW(A)加入FOLLOW(B)
+
     map<char, set<char> > copy = FOLLOW;
     while (true) {
         for (int i = 0; i < g.Vn.size(); i++) {
@@ -376,11 +368,8 @@ void getFOLLOW(grammar g) {
 // ******************************************************************
 // 建预测分析表
 // ******************************************************************
-// 非终结符 终结符 产生式
 map<pair<char, char>, string> table;
 void getTable(grammar g) {
-// A->a FIRST(a)
-// A->@ FOLLOW(A)
     g.Vt += '#';
     for (int i = 0; i < g.Vn.size(); i++) {
         char vn = g.Vn[i];
@@ -430,7 +419,6 @@ bool analysis(grammar g, string str) {
     while (flag) {
         char top = STACK.top();
         if (is_Vt(top)) {
-            // top = a != '#', STACK.pop(), index++
             if (top == str[index]) {
                 STACK.pop();
                 index++;
@@ -438,15 +426,11 @@ bool analysis(grammar g, string str) {
                 return error(str);
             }
         } else if (top == '#') {
-            // top = a = '#',分析成功
             if (top == str[index]) flag = false;
             else {
                 return error(str);
             }
         } else if (!table[{top, str[index]}].empty()) {
-            // top是非终结符
-            // 若table[top, a]存放一个产生式, STACK.pop(),
-            // 产生式右部反序进栈, (若右为空则不推什么进栈)
 
             STACK.pop();
             string tem = table[{top, str[index]}];
@@ -455,7 +439,6 @@ bool analysis(grammar g, string str) {
                 for (int i = 0; i < tem.size(); i++)
                     STACK.push(tem[i]);
         } else {
-            // 若table[top, a]存放出错标志则调用ERROR
             return error(str);
         }
     }
