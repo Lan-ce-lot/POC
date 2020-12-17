@@ -182,6 +182,19 @@ bank/fast:
 .PHONY : bank/fast
 
 #=============================================================================
+# Target rules for targets named os_bank
+
+# Build rule for target.
+os_bank: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 os_bank
+.PHONY : os_bank
+
+# fast build rule for target.
+os_bank/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\os_bank.dir\build.make CMakeFiles/os_bank.dir/build
+.PHONY : os_bank/fast
+
+#=============================================================================
 # Target rules for targets named CMakeCXXCompilerId
 
 # Build rule for target.
@@ -339,6 +352,33 @@ al/dp2.s: al/dp2.cpp.s
 al/dp2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dp2.dir\build.make CMakeFiles/dp2.dir/al/dp2.cpp.s
 .PHONY : al/dp2.cpp.s
+
+al/os_bank.obj: al/os_bank.cpp.obj
+
+.PHONY : al/os_bank.obj
+
+# target to build an object file
+al/os_bank.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\os_bank.dir\build.make CMakeFiles/os_bank.dir/al/os_bank.cpp.obj
+.PHONY : al/os_bank.cpp.obj
+
+al/os_bank.i: al/os_bank.cpp.i
+
+.PHONY : al/os_bank.i
+
+# target to preprocess a source file
+al/os_bank.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\os_bank.dir\build.make CMakeFiles/os_bank.dir/al/os_bank.cpp.i
+.PHONY : al/os_bank.cpp.i
+
+al/os_bank.s: al/os_bank.cpp.s
+
+.PHONY : al/os_bank.s
+
+# target to generate assembly for a file
+al/os_bank.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\os_bank.dir\build.make CMakeFiles/os_bank.dir/al/os_bank.cpp.s
+.PHONY : al/os_bank.cpp.s
 
 al/tx.obj: al/tx.cpp.obj
 
@@ -521,6 +561,7 @@ help:
 	@echo ... lexical_analysis
 	@echo ... main
 	@echo ... operator_precedence_grammar
+	@echo ... os_bank
 	@echo ... sy2_3
 	@echo ... tx
 	@echo ... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.obj
@@ -532,6 +573,9 @@ help:
 	@echo ... al/dp2.obj
 	@echo ... al/dp2.i
 	@echo ... al/dp2.s
+	@echo ... al/os_bank.obj
+	@echo ... al/os_bank.i
+	@echo ... al/os_bank.s
 	@echo ... al/tx.obj
 	@echo ... al/tx.i
 	@echo ... al/tx.s

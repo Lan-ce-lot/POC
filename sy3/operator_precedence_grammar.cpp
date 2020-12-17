@@ -3,7 +3,8 @@
 //
 
 #include <bits/stdc++.h>
-#include "../include/grammar_2.h"
+#include <grammar_2.h>
+
 using namespace std;
 const int MAXX = 550;
 grammar G;

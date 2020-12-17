@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.17)
 project(POC)
 
 set(CMAKE_CXX_STANDARD 14)
+# 添加头文件路径链接
+include_directories(include)
 
 add_executable(POC main.cpp)
 

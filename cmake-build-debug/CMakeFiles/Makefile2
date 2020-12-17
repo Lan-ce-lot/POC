@@ -76,6 +76,7 @@ all: CMakeFiles/tx.dir/all
 all: CMakeFiles/dp2.dir/all
 all: CMakeFiles/POC.dir/all
 all: CMakeFiles/bank.dir/all
+all: CMakeFiles/os_bank.dir/all
 all: CMakeFiles/CMakeCXXCompilerId.dir/all
 all: CMakeFiles/main.dir/all
 all: CMakeFiles/lexical_analysis.dir/all
@@ -95,6 +96,7 @@ clean: CMakeFiles/tx.dir/clean
 clean: CMakeFiles/dp2.dir/clean
 clean: CMakeFiles/POC.dir/clean
 clean: CMakeFiles/bank.dir/clean
+clean: CMakeFiles/os_bank.dir/clean
 clean: CMakeFiles/CMakeCXXCompilerId.dir/clean
 clean: CMakeFiles/main.dir/clean
 clean: CMakeFiles/lexical_analysis.dir/clean
@@ -111,7 +113,7 @@ clean: CMakeFiles/operator_precedence_grammar.dir/clean
 CMakeFiles/tx.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\tx.dir\build.make CMakeFiles/tx.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\tx.dir\build.make CMakeFiles/tx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\work\clion\POC\cmake-build-debug\CMakeFiles --progress-num=19,20 "Built target tx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\work\clion\POC\cmake-build-debug\CMakeFiles --progress-num=21,22 "Built target tx"
 .PHONY : CMakeFiles/tx.dir/all
 
 # Build rule for subdir invocation for target.
@@ -211,6 +213,33 @@ bank: CMakeFiles/bank.dir/rule
 CMakeFiles/bank.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\bank.dir\build.make CMakeFiles/bank.dir/clean
 .PHONY : CMakeFiles/bank.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/os_bank.dir
+
+# All Build rule for target.
+CMakeFiles/os_bank.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\os_bank.dir\build.make CMakeFiles/os_bank.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\os_bank.dir\build.make CMakeFiles/os_bank.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\work\clion\POC\cmake-build-debug\CMakeFiles --progress-num=17,18 "Built target os_bank"
+.PHONY : CMakeFiles/os_bank.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/os_bank.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\work\clion\POC\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/os_bank.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\work\clion\POC\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/os_bank.dir/rule
+
+# Convenience name for target.
+os_bank: CMakeFiles/os_bank.dir/rule
+
+.PHONY : os_bank
+
+# clean rule for target.
+CMakeFiles/os_bank.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\os_bank.dir\build.make CMakeFiles/os_bank.dir/clean
+.PHONY : CMakeFiles/os_bank.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/CMakeCXXCompilerId.dir
@@ -327,7 +356,7 @@ CMakeFiles/grammar_parser.dir/clean:
 CMakeFiles/sy2_3.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sy2_3.dir\build.make CMakeFiles/sy2_3.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sy2_3.dir\build.make CMakeFiles/sy2_3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\work\clion\POC\cmake-build-debug\CMakeFiles --progress-num=17,18 "Built target sy2_3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\work\clion\POC\cmake-build-debug\CMakeFiles --progress-num=19,20 "Built target sy2_3"
 .PHONY : CMakeFiles/sy2_3.dir/all
 
 # Build rule for subdir invocation for target.

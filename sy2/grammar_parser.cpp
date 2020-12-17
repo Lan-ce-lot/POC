@@ -134,17 +134,17 @@ void simplify(grammar &g) {
 // 消除左递归
 // ******************************************************************
 void remove_left_recursion(grammar &g) {
-    // 替换
     grammar new_g;
     new_g.S = g.S, new_g.Vn = g.Vn, new_g.Vt = g.Vt;
-    for (int i = 0; i < g.Vn.size(); i++) {
+    for (int i = 0; i < g.Vn.size(); i++) {// 替换
         char c = g.Vn[i]; // pi
         for (int j = 0; j <= i - 1; j++) {
             char tem = g.Vn[j]; // pj target
             for (int k = 0; k < g.P[c].size(); k++) {
                 if (g.P[c][k].find(tem, 0) == 0) {
                     for (int z = 0; z < g.P[tem].size(); z++) {
-                        new_g.P[c].push_back(g.P[tem][z] + g.P[c][k].substr(1, g.P[c][k].size() - 1));
+                        string str = g.P[c][k].substr(1, g.P[c][k].size() - 1);
+                        new_g.P[c].push_back(g.P[tem][z] + str);
                     }
                 } else if (!check_Vn_repeat(g.P[c][k], new_g.P[c])) {
                     new_g.P[c].push_back(g.P[c][k]);
@@ -153,10 +153,9 @@ void remove_left_recursion(grammar &g) {
             g.P[c] = new_g.P[c];
             new_g.P[c].clear();
         }
-        // 消除直接左递归
         map<char, vector<string> > tem_p;
         int tem_len = g.Vn.size();
-        for (int z = 0; z < tem_len; z++) {
+        for (int z = 0; z < tem_len; z++) {// 消除直接左递归
             tem_p.clear();
             char c = g.Vn[z];
             for (int j = 0; j < g.P[c].size(); j++) {
@@ -168,13 +167,12 @@ void remove_left_recursion(grammar &g) {
                             g.P[c][k] += new_c;
                             tem_p[c].push_back(g.P[c][k]);
                         } else if (g.P[c][k][0] == c) {
-                            g.P[new_c].push_back(g.P[c][k].substr(1, g.P[c][k].size() - 1) + new_c);
+                            string str = g.P[c][k].substr(1, g.P[c][k].size() - 1);
+                            g.P[new_c].push_back(str + new_c);
                         }
                     }
                     g.P[new_c].push_back("@");
-                    if (!exitV(g.Vt, '@')) {
-                        g.Vt += "@";
-                    }
+                    if (!exitV(g.Vt, '@')) g.Vt += "@";
                     g.P[c].clear();
                     g.P[c] = tem_p[c];
                     break;
@@ -183,8 +181,7 @@ void remove_left_recursion(grammar &g) {
         }
     }
     print_G(g);
-    // 化简
-    simplify(g);
+    simplify(g);// 化简
 }
 
 //E->T|E+T;
@@ -209,7 +206,6 @@ void remove_left_gene(grammar &g) {
             if (it.second.size() >= 2) {
                 char new_Vn = get_Vn(g.Vn);
                 g.Vn += new_Vn;
-//				debug(new_Vn);
                 for (auto it1 : it.second) {
                     string str = g.P[c][it1].substr(1, g.P[c][it1].size() - 1);
                     g.P[new_Vn].push_back(str);
@@ -224,7 +220,6 @@ void remove_left_gene(grammar &g) {
         }
     }
     print_G(g);
-//    simplify(g);
 }
 
 
@@ -283,18 +278,12 @@ void scanG(FILE *fpi, grammar &g) {
 // 求FIRST集
 // ******************************************************************
 map<char, set<char> > FIRST;
-
 void getFIRST(grammar g) {
-    // 如果符号是一个终结符
+    // 如果符号是一个终结符. 加入自己的FIRST集
     for (int i = 0; i < g.Vt.size(); i++) {
         FIRST[g.Vt[i]].insert(g.Vt[i]);
     }
     // 如果一个符号是一个非终结符号
-    // X->a..., 把a加入FIRST(X), 若X->@, 把@也加入FIRST(X)               1
-    // X->Y..., 把FIRST(Y)/@加入FIRST(X)                               2
-    // X->Y1Y2Y3...Yi...Yk, FIRST(Yi)都含@, 则把FIRST(Yi)/@加入FIRST(X) 3
-    // 若都有@, 则把@也加入 FIRST(X)                                     4
-
     map<char, set<char> > copy = FIRST; // FIRST集的拷贝
     while (true) {
 
@@ -304,16 +293,20 @@ void getFIRST(grammar g) {
                 for (int k = 0; k < g.P[c][j].size(); k++) {
                     bool have_empty = false;
                     char tem = g.P[c][j][k];
-                    // 1
+                    // X->a..., 把a加入FIRST(X), 若X->@, 把@也加入FIRST(X)
                     if (k == 0 && is_Vt(tem)) {
                         FIRST[c].insert(tem);
                         break;
                     } else if (exitV(g.Vn, tem)) {
+                        // X->Y..., 把FIRST(Y)/@加入FIRST(X)
                         for (auto it : FIRST[tem])
+                            // X->Y1Y2Y3...Yi...Yk, FIRST(Yi)都含@,
+                            // 则把FIRST(Yi)/@加入FIRST(X)
                             if (it != '@') FIRST[c].insert(it);
                             else have_empty = true;
                         if (!have_empty) break;
                     }
+                    // 若都有@, 则把@也加入 FIRST(X)
                     if (k == g.P[c][j].size() - 1 && exitV(g.Vn, tem) && have_empty) {
                         FIRST[c].insert('@');
                     }
@@ -323,6 +316,7 @@ void getFIRST(grammar g) {
         if (copy == FIRST) break;
         copy = FIRST;
     }
+    // 打印
     puts("\nFIRST集");
     for (auto it : FIRST) {
         cout << it.first << ":";
@@ -336,7 +330,6 @@ void getFIRST(grammar g) {
 // 求FOLLOW集
 // ******************************************************************
 map<char, set<char> > FOLLOW;
-
 void getFOLLOW(grammar g) {
     // # 至于 FOLLOW(S)
     FOLLOW[g.S].insert('#');
@@ -383,10 +376,8 @@ void getFOLLOW(grammar g) {
 // ******************************************************************
 // 建预测分析表
 // ******************************************************************
-
 // 非终结符 终结符 产生式
 map<pair<char, char>, string> table;
-
 void getTable(grammar g) {
 // A->a FIRST(a)
 // A->@ FOLLOW(A)
@@ -403,26 +394,26 @@ void getTable(grammar g) {
                     table[{vn, it}] = g.P[vn][j];
         }
     }
-    cout << "\n  ";
+    // 打印
+    cout << "预测分析表\n      ";
     for (int i = 0; i < g.Vt.size(); i++) {
-        printf("%-7c", g.Vt[i]);
+        printf("%-6c", g.Vt[i]);
     }
     puts("");
     for (int i = 0; i < g.Vn.size(); i++) {
-        cout << g.Vn[i] << ":";
+        cout << g.Vn[i] << "     ";
         for (int j = 0; j < g.Vt.size(); j++) {
-            cout.width(7);
+            cout.width(6);
             cout.setf(ios::left);
             cout << table[{g.Vn[i], g.Vt[j]}];
         }
         puts("");
     }
-
 }
 
 bool error(string str) {
 //    cout << "出错啦!!!!!!!!!!!!!!!!!" << endl;
-    cout << str << endl;
+//    cout << str << endl;
     return false;
 }
 
@@ -431,11 +422,6 @@ bool error(string str) {
 // ******************************************************************
 bool analysis(grammar g, string str) {
     str += '#';
-    // 1.top = a = '#',分析成功
-    // 2.top = a != '#', STACK.pop(), index++
-    // 3.top是非终结符
-    // 若table[top, a]存放一个产生式, STACK.pop(), 产生式右部反序进栈, (若右为空则不推什么进栈)
-    // 若table[top, a]存放出错标志则调用ERROR
     stack<char> STACK;
     int index = 0;
     STACK.push('#');
@@ -444,6 +430,7 @@ bool analysis(grammar g, string str) {
     while (flag) {
         char top = STACK.top();
         if (is_Vt(top)) {
+            // top = a != '#', STACK.pop(), index++
             if (top == str[index]) {
                 STACK.pop();
                 index++;
@@ -451,11 +438,16 @@ bool analysis(grammar g, string str) {
                 return error(str);
             }
         } else if (top == '#') {
+            // top = a = '#',分析成功
             if (top == str[index]) flag = false;
             else {
                 return error(str);
             }
         } else if (!table[{top, str[index]}].empty()) {
+            // top是非终结符
+            // 若table[top, a]存放一个产生式, STACK.pop(),
+            // 产生式右部反序进栈, (若右为空则不推什么进栈)
+
             STACK.pop();
             string tem = table[{top, str[index]}];
             reverse(tem.begin(), tem.end());
@@ -463,12 +455,10 @@ bool analysis(grammar g, string str) {
                 for (int i = 0; i < tem.size(); i++)
                     STACK.push(tem[i]);
         } else {
+            // 若table[top, a]存放出错标志则调用ERROR
             return error(str);
         }
-
-
     }
-    cout << str << endl;
     return true;
 }
 
@@ -531,6 +521,7 @@ int main() {
 
     copy = query;
     for (auto &it : query) it = lexical(it);
+    for (auto it : query) cout << it << endl;
 
     for (int i = 0; i < query.size(); i++) {
         cout << copy[i] << endl;

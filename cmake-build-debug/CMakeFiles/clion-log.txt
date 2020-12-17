@@ -1,6 +1,7 @@
 "D:\ide\clion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\work\clion\POC
     -- src/bank.cpp will be compiled to bin/bank
     -- src/dp2.cpp will be compiled to bin/dp2
+    -- src/os_bank.cpp will be compiled to bin/os_bank
     -- src/tx.cpp will be compiled to bin/tx
     -- src/CMakeCXXCompilerId.cpp will be compiled to bin/CMakeCXXCompilerId
     -- src/main.cpp will be compiled to bin/main
