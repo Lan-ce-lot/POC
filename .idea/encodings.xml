@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/al/dfs.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/al/os_bank.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/al/tx.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sy1/lexical_analysis.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sy2/grammar_parser.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sy2/sy2_3.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sy3/operator_precedence_grammar.cpp" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
