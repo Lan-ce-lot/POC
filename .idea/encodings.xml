@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/sy2/grammar_2.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sy2/grammar_parser.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sy3/grammar_2.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sy3/operator_precedence_grammar.cpp" charset="GBK" />
+  </component>
+</project>
