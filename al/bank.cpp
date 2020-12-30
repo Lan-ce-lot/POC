@@ -1,272 +1,336 @@
-//
-// Created by Lance on 2020/12/16.
-//
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-/**
-* @Title: ${file_name}
-* @Description: 
-* @author lance
-* @date ${date} ${time}
-* @version V1.0
-*/
+#define N 50 //最大进程数
+#define M 100 //最大资源种类数
 
-//#include <bits/stdc++.h>
-//
-//using  namespace std;
-//
-//int main() {
-//
-//
-//
-//
-//    return 0;
-//}
+int process; //进程的个数
+int resource; //资源的种类
+int max[N][M]; //最大需求矩阵，即每个进程对每类资源的最大需求
+int allocation[N][M];//定义已分配矩阵，即每类资源当前已分配给每个进程的资源数
+int need[N][M];//定义需求矩阵，表示每一个进程尚需的各类资源数
+int available[M]; //可利用资源向量，表示每种资源的可利用资源数
+int request[N][M]; //进程的请求向量, 表示进程申请资源的大小
+int safe[N];  //安全序列
+int length; //安全序列的长度
+int works[N][M];
+int finish[N] = { 0 }; //表示系统是否有足够的资源分配给进程，使其运行完成
 
-//附录：源代码
-#include <bits/stdc++.h>
-using  namespace std;
-//#include<stdio.h>
-//#include<stdlib.h>
-
-#define _CRT_SECURE_NO_WARNINGS 1
-int Available[10];           //可使用资源向量
-int Max[10][10];             //最大需求矩阵
-int Allocation[10][10] = {0};      //分配矩阵
-int Need[10][10] = {0};            //需求矩阵
-int Work[10];                   //工作向量
-int Finish[10];                  //是否有足够的资源分配，状态标志
-int Request[10][10];         //进程申请资源向量
-int Pause[10];
-int arr[] = {0};        //各类资源总数
-int List[10];
-int i, j;
-int n;                       //系统资源总数
-int m;                       //总的进程数
-int a;                       //当前申请的进程号
-int l, e;                     //计数器
-int b = 0, c = 0, f = 0, g;           //计数器
-int z = 0;
-
-int securitycheck()     //安全性检测
-{
-    printf("\n\n");
-    printf("\t\t\t※ 安全性检测 ※\n\n");
-    if (n == 3) {
-        printf("          工作向量       尚需求量       已分配      工作向量+已分配\n进程 ");
-        for (c = 1; c <= 4; c++) {
-            for (j = 1; j <= n; j++) {
-                printf("  %d类", j);
-            }
-        }
-    }
-    if (n == 2) {
-        printf("       工作向量   尚需求量  已分配  工作向量+已分配\n进程 ");
-        for (c = 1; c <= 4; c++) {
-            for (j = 1; j <= n; j++) {
-                printf("  %d类", j);
-            }
-        }
-    }
-    for (i = 1; i <= m; i++) {
-        Pause[i] = Available[i];    //Pause[i]只是一个暂时寄存的中间变量，为防止在下面安全性检查时修改到Available[i]而代替的一维数组
-        Finish[i] = false;
-    }
-    for (g = 1; g <= m; g++) {
-        for (i = 1; i <= m; i++) {
-            b = 0;                 //计数器初始化
-            Finish[i] == false;
-            for (j = 1; j <= n; j++) {
-                if (Need[i][j] <= Pause[j]) {
-                    b = b + 1;
-                }
-                if (Finish[i] == false && b == n) {
-                    Finish[i] = true;
-                    printf("\nP[%d] ", i);        //依次输出进程安全序列
-                    for (l = 1; l <= n; l++) {
-                        printf("  %2d ", Pause[l]);
-                    }
-                    for (j = 1; j <= n; j++) {
-                        printf("  %2d ", Need[i][j]);
-                    }
-                    for (j = 1; j <= n; j++) {
-                        //Allocation[i][j]=Pause[j]-Need[i][j];
-                        printf("  %2d ", Allocation[i][j]);
-                    }
-                    for (j = 1; j <= n; j++) {
-                        printf("  %2d ", Pause[j] + Allocation[i][j]);
-                    }
-                    for (l = 1; l <= n; l++) {
-                        Pause[l] = Pause[l] + Allocation[i][l];
-                    }
-                }
-            }
-        }
-    }
-
-    printf("\n\n");
-    for (i = 1; i <= m; i++) {
-        if (Finish[i] == true) f = f + 1;             //统计Finish[i]＝＝true的个数
-    }
-    if (f == m) {
-        printf("safe state");
-        printf("\n\n系统剩余资源量：   ");
-        for (i = 1; i <= n; i++) {
-            printf("   %d ", Available[i]);
-        }
-        f = 0;       //将计数器f重新初始化，为下一次提出新的进程申请做准备
-        return 1;
-    } else {
-        printf("unsafe state ");
-        for (i = 1; i <= n; i++) {
-            Available[i] = Available[i] + Request[a][i];
-            Allocation[a][i] = Allocation[a][i] - Request[a][i];
-            Need[a][i] = Need[a][i] + Request[a][i];
-        }
-        return 0;
-    }
-
+void menu() {
+    printf("------------------choose----------------------\n");
+    printf("*              1.初始化数据                  *\n");
+    printf("*              2.申请资源                    *\n");
+    printf("*              3.显示资源分配情况     	     *\n");
+    printf("*              4.退出                        *\n");
+    printf("----------------------------------------------\n");
+    printf("请选择: ");
 }
 
-void initialize()    //初始化
-{
-    printf("请输入系统的资源种类数：");
-    scanf("%d", &n);
-    for (i = 1; i <= n; i++) {
-        printf("第%d类资源总数：", i);
-        scanf("%d", &arr[i]);
-    }
-    printf("请输入进程总数：");
-    scanf("%d", &m);
-    for (i = 1; i <= m; i++) {
-        for (j = 1; j <= n; j++) {
-            printf("进程P[%d]对第%d类资源的最大需求量：", i, j);
-            scanf("%d", &Max[i][j]);
+void display() { //先假定可分配，再进行安全性检查
+    printf("资源情况 \t Max \t\t Allocation \t Need \t\t Available\n");
+    printf("进程     \t ");
+    for (int i = 0; i < 4; i++)
+        for (int j = 0; j < resource; j++)
+        {
+            if (j != resource - 1) printf("%c  ", 'A' + j);
+            else printf("%c  \t ", 'A' + j);
         }
-    }
-    for (i = 1; i <= m; i++) {
-        for (j = 1; j <= n; j++) {
-            printf("进程P[%d]对第%d类资源已分配数：", i, j);
-            scanf("%d", &Allocation[i][j]);
-            Need[i][j] = Max[i][j] - Allocation[i][j];
-        }
-    }
-    for (i = 1; i <= n; i++) {
-        for (j = 1; j <= m; j++) {
-            arr[i] -= Allocation[j][i];
-        }
-    }
-    for (i = 1; i <= n; i++)
-        Available[i] = arr[i];
-    securitycheck();
-}
+    printf("\n");
 
-void mainrequest()  //进程申请资源
-{
-    printf("请输入申请资源的进程：");
-    scanf("%d", &a);
-    for (i = 1; i <= n; i++) {
-        printf("请输入进程P[%d]对%d类资源的申请量：", a, i);
-        scanf("%d", &Request[a][i]);
-        if (Request[a][i] > Need[a][i]) {
-            printf("\n出错！进程申请的资源数多于它自己申报的最大需求量\n");
-            return;
+    for (int i = 0; i < process; i++)
+    {
+        printf(" P%d      \t ", i);
+        for (int j = 0; j < resource; j++)
+        {
+            printf("%-3d", max[i][j]);
         }
-        if (Request[a][i] > Available[i]) {
-            printf("\nP[%d]请求的资源数大于可用资源数，必须等待\n", a);
-            return;
+        printf("\t ");
+        for (int j = 0; j < resource; j++)
+        {
+            printf("%-3d", allocation[i][j]);
         }
-
-    }
-    for (i = 1; i <= n; i++) {
-        //以下是试探性分配
-        Available[i] = Available[i] - Request[a][i];
-        Allocation[a][i] = Allocation[a][i] + Request[a][i];
-        Need[a][i] = Need[a][i] - Request[a][i];
-    }
-    int ret = securitycheck();
-    if (ret == 1) {
-        int key = 0;
-        for (j = 1; j <= n; j++) {
-            if (Need[a][j] == 0) {
-                key++;
-            }
+        printf("\t ");
+        for (int j = 0; j < resource; j++)
+        {
+            printf("%-3d", need[i][j]);
         }
-        if (key == n) {
-            for (j = 1; j <= n; j++) {
-                Available[j] += Allocation[a][j];
-                Allocation[a][j] = 0;
-            }
+        printf("\t ");
+        for (int j = 0; i == 0 && j < resource; j++)
+        {
+            printf("%-3d", available[j]);
         }
-    }
-}
-
-void mainshow() {
-    printf("\n\n");
-    if (n == 3) {
-        printf("          已分配       最大需求量       尚需要量 \n进程");
-    }
-    if (n == 2) {
-        printf("       已分配   最大需求  尚需要量 \n进程");
-    }
-    for (i = 1; i <= 3; i++) {
-        for (j = 1; j <= n; j++) {
-            printf("  %d类", j);
-        }
-    }
-    for (i = 1; i <= m; i++) {
-        printf("\nP[%d]", i);
-        for (j = 1; j <= n; j++) {
-            printf("  %2d ", Allocation[i][j]);
-        }
-        for (j = 1; j <= n; j++) {
-            printf("  %2d ", Max[i][j]);
-        }
-        for (j = 1; j <= n; j++) {
-            printf("  %2d ", Need[i][j]);
-        }
-    }
-    printf("\n\n系统剩余资源量：   ");
-    for (i = 1; i <= n; i++) {
-        printf("   %d ", Available[i]);
+        printf("\n");
     }
     printf("\n");
 }
 
-void menu() {
-    printf("\n\n\t\t 银行家算法 \n");
-    printf("\n\n\t\t\t1:初始化");
-    printf("\n  \t\t\t2:进程进行资源申请");
-    printf("\n  \t\t\t3:资源分配状态");
-    printf("\n  \t\t\t4:退出程序");
-    printf("\n\n\t\t\t\t\t 请输入你的选择: ");
+void displaySafe() {
+    printf("\n----------------------------------该安全序列资源分配情况----------------------------------\n");
+    printf("资源情况 \t Work \t\t Need \t\t Allocation \t Work+Allocation \t Finish\n");
+    printf("进程     \t ");
+    for (int i = 0; i < 4; i++)
+        for (int j = 0; j < resource; j++)
+        {
+            if (j != resource - 1) printf("%c  ", 'A' + j);
+            else printf("%c  \t ", 'A' + j);
+        }
+    printf("\n");
+
+    for (int i = 0; i < process; i++)
+    {
+        printf(" P%d      \t ", safe[i]);
+        for (int j = 0; j < resource; j++)
+        {
+            printf("%-3d", works[safe[i]][j]);
+        }
+        printf("\t ");
+        for (int j = 0; j < resource; j++)
+        {
+            printf("%-3d", need[safe[i]][j]);
+        }
+        printf("\t ");
+        for (int j = 0; j < resource; j++)
+        {
+            printf("%-3d", allocation[safe[i]][j]);
+        }
+        printf("\t ");
+        for (int j = 0; j < resource; j++)
+        {
+            printf("%-3d", works[safe[i]][j] + allocation[safe[i]][j]);
+        }
+        printf("\t\t ");
+        if (finish[i] == 0) printf("false\n");
+        else printf("true\n");
+    }
+    printf("\n");
+}
+
+int safeCheck() {
+    int safeList[N] = { 0 }, len = 0; //存放安全序列
+    int work[M] = { 0 }; //表示系统可提供给进程继续运行所需的各类资源数目
+    for (int i = 0; i < N; i++) finish[i] = 0; //表示系统是否有足够的资源分配给进程，使其运行完成
+
+    for (int i = 0; i < resource; i++)
+        work[i] = available[i]; //等同于available
+
+    for (int z = 0; z < process; z++)
+    {
+        for (int i = 0; i < process; i++)
+        {
+            if (finish[i] == 0)
+            {
+                int flag = 1;
+                for (int j = 0; j < resource; j++)
+                {
+                    if (need[i][j] > work[j])
+                    {
+                        flag = 0;
+                        break;
+                    }
+                }
+                if (flag == 1) //成功找到
+                {
+                    safeList[len++] = i;
+                    //执行当前pi进程到完成
+                    for (int j = 0; j < resource; j++) works[i][j] = work[j];
+                    for (int j = 0; j < resource; j++)
+                    {
+                        work[j] += allocation[i][j];
+                        //						works[i][j] += allocation[i][j];
+                        finish[i] = 1;
+                    }
+                    break;
+                }
+            }
+        }
+    }
+
+    int flag = 1;
+    for (int k = 0; k < process; k++)
+    {
+        if (finish[k] == 0)
+        {
+            flag = 0;
+            break;
+        }
+    }
+
+    if (flag == 1) //安全状态
+    {
+        printf("找到安全序列，且安全序列为: ");
+        for (int k = 0; k < len; k++)
+        {
+            safe[length++] = safeList[k];
+            if (k != len - 1)   printf("P%d->", safeList[k]);
+            else printf("P%d \n", safeList[k]);
+        }
+        displaySafe();
+    }
+    else //不安全状态
+    {
+        return 0;
+    }
+    return 1;
+}
+
+int init() { //初始化，输入银行家算法起始各项数据
+    printf("请输入系统进程的个数:");
+    scanf("%d", &process);
+    printf("请输入系统资源的种数:");
+    scanf("%d", &resource);
+    for (int i = 0; i < process; i++)
+    {
+        printf("------------------P%d----------------------\n", i);
+        printf("              Max: ");
+        for (int j = 0; j < resource; j++)
+        {
+            scanf("%d", &max[i][j]);  //输入最大需求
+        }
+
+        printf("              Allocation: ");
+        for (int j = 0; j < resource; j++)
+        {
+            scanf("%d", &allocation[i][j]); //输入已分配资源
+        }
+
+        printf("              need: ");
+        for (int j = 0; j < resource; j++)
+        {
+            need[i][j] = max[i][j] - allocation[i][j];
+            printf("%d ", need[i][j]);
+        }
+        printf("\n");
+        printf("------------------------------------------\n");
+    }
+
+    printf("整个系统可利用资源向量Available: "); //输入可利用资源向量
+    for (int j = 0; j < resource; j++)
+        scanf("%d", &available[j]);
+    printf("\n----------------------------------当前资源分配情况----------------------------------\n");
+    display();
+    int isSafe = safeCheck(); //对此时刻状态进行安全性检查
+    if (isSafe == 1)
+        return 1;
+    else
+        return 0; //失败重新初始化
+}
+
+void req() { //申请资源
+    int n; //请求资源的进程号
+    printf("请输入请求的进程号: ");
+    scanf("%d", &n);
+
+    while (n >= process)
+    {
+        printf("没有该进程，请重新输入: ");
+        scanf("%d", &n);
+    }
+
+    printf("请输入进程P%d的请求向量: ", n);
+    for (int i = 0; i < resource; i++)
+    {
+        scanf("%d", &request[n][i]);
+    }
+    //开始判断
+    for (int i = 0; i < resource; i++)
+    {
+        if (need[n][i] < request[n][i])
+        {
+            printf("\n----------------------------------当前资源分配情况----------------------------------\n");
+            display();
+            printf("请求的资源数已超过所宣布的最大值!\n");
+            return;
+        }
+    }
+
+    for (int i = 0; i < resource; i++)
+    {
+        if (available[i] < request[n][i])
+        {
+            printf("\n----------------------------------当前资源分配情况----------------------------------\n");
+            display();
+            printf("当前尚无足够资源,请等待其它进程完成释放资源后执行\n");
+            return;
+        }
+    }
+
+    //试分配资源给请求进程，并做安全性检查
+    for (int i = 0; i < resource; i++)
+    {
+        available[i] -= request[n][i];
+        allocation[n][i] += request[n][i];
+        need[n][i] -= request[n][i];
+    }
+    printf("\n----------------------------------预分配后的资源情况----------------------------------\n");
+    display();
+    int isSafe = safeCheck();
+
+    if (isSafe == 1)
+    {
+        printf("若分配资源,系统仍将处于安全状态！故分配资源！\n");
+        printf("\n----------------------------------正式完成分配后的资源情况----------------------------------\n");
+        display();
+    }
+    else
+    {
+        printf("找不到安全序列,若分配资源,系统将处于不安全状态！故不分配资源！恢复至原来状态! \n");
+        //恢复试分配之前的现场
+        for (int i = 0; i < resource; i++)
+        {
+            available[i] += request[n][i];
+            allocation[n][i] -= request[n][i];
+            need[n][i] += request[n][i];
+        }
+        printf("\n----------------------------------恢复预分配前的资源情况----------------------------------\n");
+        display();
+    }
+
 }
 
 int main() {
-    cout << 1;
-    int key = 0;
+    int choose;
+    while (1)
+    {
+        int flag = 0;
+        menu();
+        scanf("%d", &choose);
+        switch (choose)
+        {
+            case 1:
+                flag = init();
+                if (flag == 1)
+                {
+                    printf("初始化成功,此时刻存在安全序列,且安全序列为: ");
+                    for (int i = 0; i < length; i++)
+                    {
+                        if (i != length - 1)	printf("P%d->", safe[i]);
+                        else printf("P%d ,故系统是安全的\n", safe[i]);
+                    }
 
-    printf("黄昌盛");
-//    while (1) {
-//        menu();
-//        scanf("%d", &key);
-//        printf("\n\n");
-////        switch (key) {
-////            case 1:
-////                initialize();
-////                break;
-////            case 2:
-////                mainrequest();
-////                break;
-////            case 3:
-////                mainshow();
-////                break;
-////            case 4:
-////                printf("\n\n\t\t\t谢谢使用 \n");
-////                printf("\n\t\tSee you next time !\n\n\n");
-////                system("pause");
-////                return 0;
-////        }
-//    }
-//    system("pause");
+                }
+                else printf("初始化失败,找不到此时刻的安全序列,故系统不安全\n");
+                getchar();
+                break;
+            case 2:
+                req();
+                getchar();
+                break;
+            case 3:
+                printf("\n----------------------------------当前资源分配情况----------------------------------\n");
+                display();
+                getchar();
+                break;
+            case 4:
+                printf("程序已退出！\n");
+                getchar();
+                return 0;
+            default:
+                printf("不存在此选项,请重新输入！\n");
+                getchar();
+                break;
+        }
+    }
+
     return 0;
 }
