@@ -59,38 +59,27 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /cygdrive/c/Users/hcs/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe
+CMAKE_COMMAND = /home/lance/文档/software/clion/clion-2020.3/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /cygdrive/c/Users/hcs/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe -E rm -f
+RM = /home/lance/文档/software/clion/clion-2020.3/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/d/work/clion/POC
+CMAKE_SOURCE_DIR = /home/lance/CLionProjects/POC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/d/work/clion/POC/cmake-build-debug
+CMAKE_BINARY_DIR = /home/lance/CLionProjects/POC/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/cygdrive/c/Users/hcs/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/cygdrive/c/Users/hcs/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/lance/文档/software/clion/clion-2020.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -98,11 +87,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/lance/文档/software/clion/clion-2020.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,95 +131,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named POC
+# Target rules for targets named operator_precedence_grammar
 
 # Build rule for target.
-POC: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 POC
-.PHONY : POC
+operator_precedence_grammar: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 operator_precedence_grammar
+.PHONY : operator_precedence_grammar
 
 # fast build rule for target.
-POC/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/build
-.PHONY : POC/fast
-
-#=============================================================================
-# Target rules for targets named bank
-
-# Build rule for target.
-bank: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bank
-.PHONY : bank
-
-# fast build rule for target.
-bank/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/build
-.PHONY : bank/fast
-
-#=============================================================================
-# Target rules for targets named dp2
-
-# Build rule for target.
-dp2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dp2
-.PHONY : dp2
-
-# fast build rule for target.
-dp2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dp2.dir/build.make CMakeFiles/dp2.dir/build
-.PHONY : dp2/fast
-
-#=============================================================================
-# Target rules for targets named glz
-
-# Build rule for target.
-glz: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glz
-.PHONY : glz
-
-# fast build rule for target.
-glz/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glz.dir/build.make CMakeFiles/glz.dir/build
-.PHONY : glz/fast
-
-#=============================================================================
-# Target rules for targets named process
-
-# Build rule for target.
-process: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 process
-.PHONY : process
-
-# fast build rule for target.
-process/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/process.dir/build.make CMakeFiles/process.dir/build
-.PHONY : process/fast
-
-#=============================================================================
-# Target rules for targets named main
-
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
-
-#=============================================================================
-# Target rules for targets named tx
-
-# Build rule for target.
-tx: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tx
-.PHONY : tx
-
-# fast build rule for target.
-tx/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tx.dir/build.make CMakeFiles/tx.dir/build
-.PHONY : tx/fast
+operator_precedence_grammar/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/operator_precedence_grammar.dir/build.make CMakeFiles/operator_precedence_grammar.dir/build
+.PHONY : operator_precedence_grammar/fast
 
 #=============================================================================
 # Target rules for targets named grammar_parser
@@ -235,19 +157,6 @@ grammar_parser/fast:
 .PHONY : grammar_parser/fast
 
 #=============================================================================
-# Target rules for targets named CMakeCXXCompilerId
-
-# Build rule for target.
-CMakeCXXCompilerId: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeCXXCompilerId
-.PHONY : CMakeCXXCompilerId
-
-# fast build rule for target.
-CMakeCXXCompilerId/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/build
-.PHONY : CMakeCXXCompilerId/fast
-
-#=============================================================================
 # Target rules for targets named lexical_analysis
 
 # Build rule for target.
@@ -259,6 +168,32 @@ lexical_analysis: cmake_check_build_system
 lexical_analysis/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexical_analysis.dir/build.make CMakeFiles/lexical_analysis.dir/build
 .PHONY : lexical_analysis/fast
+
+#=============================================================================
+# Target rules for targets named bank
+
+# Build rule for target.
+bank: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bank
+.PHONY : bank
+
+# fast build rule for target.
+bank/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/build
+.PHONY : bank/fast
+
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
 # Target rules for targets named os_bank
@@ -274,6 +209,97 @@ os_bank/fast:
 .PHONY : os_bank/fast
 
 #=============================================================================
+# Target rules for targets named process
+
+# Build rule for target.
+process: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 process
+.PHONY : process
+
+# fast build rule for target.
+process/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/process.dir/build.make CMakeFiles/process.dir/build
+.PHONY : process/fast
+
+#=============================================================================
+# Target rules for targets named tx
+
+# Build rule for target.
+tx: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tx
+.PHONY : tx
+
+# fast build rule for target.
+tx/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tx.dir/build.make CMakeFiles/tx.dir/build
+.PHONY : tx/fast
+
+#=============================================================================
+# Target rules for targets named CMakeCXXCompilerId
+
+# Build rule for target.
+CMakeCXXCompilerId: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeCXXCompilerId
+.PHONY : CMakeCXXCompilerId
+
+# fast build rule for target.
+CMakeCXXCompilerId/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/build
+.PHONY : CMakeCXXCompilerId/fast
+
+#=============================================================================
+# Target rules for targets named Palindromic
+
+# Build rule for target.
+Palindromic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Palindromic
+.PHONY : Palindromic
+
+# fast build rule for target.
+Palindromic/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Palindromic.dir/build.make CMakeFiles/Palindromic.dir/build
+.PHONY : Palindromic/fast
+
+#=============================================================================
+# Target rules for targets named sy5_self
+
+# Build rule for target.
+sy5_self: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sy5_self
+.PHONY : sy5_self
+
+# fast build rule for target.
+sy5_self/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sy5_self.dir/build.make CMakeFiles/sy5_self.dir/build
+.PHONY : sy5_self/fast
+
+#=============================================================================
+# Target rules for targets named dp2
+
+# Build rule for target.
+dp2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dp2
+.PHONY : dp2
+
+# fast build rule for target.
+dp2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dp2.dir/build.make CMakeFiles/dp2.dir/build
+.PHONY : dp2/fast
+
+#=============================================================================
+# Target rules for targets named POC
+
+# Build rule for target.
+POC: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 POC
+.PHONY : POC
+
+# fast build rule for target.
+POC/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/build
+.PHONY : POC/fast
+
+#=============================================================================
 # Target rules for targets named sy2_3
 
 # Build rule for target.
@@ -287,17 +313,30 @@ sy2_3/fast:
 .PHONY : sy2_3/fast
 
 #=============================================================================
-# Target rules for targets named operator_precedence_grammar
+# Target rules for targets named glz
 
 # Build rule for target.
-operator_precedence_grammar: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 operator_precedence_grammar
-.PHONY : operator_precedence_grammar
+glz: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glz
+.PHONY : glz
 
 # fast build rule for target.
-operator_precedence_grammar/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/operator_precedence_grammar.dir/build.make CMakeFiles/operator_precedence_grammar.dir/build
-.PHONY : operator_precedence_grammar/fast
+glz/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glz.dir/build.make CMakeFiles/glz.dir/build
+.PHONY : glz/fast
+
+#=============================================================================
+# Target rules for targets named jiege
+
+# Build rule for target.
+jiege: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 jiege
+.PHONY : jiege
+
+# fast build rule for target.
+jiege/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jiege.dir/build.make CMakeFiles/jiege.dir/build
+.PHONY : jiege/fast
 
 CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.o: CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
 
@@ -325,6 +364,33 @@ CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.s: CMakeFiles/3.17.3/Compiler
 CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
 .PHONY : CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+
+al/Palindromic.o: al/Palindromic.cpp.o
+
+.PHONY : al/Palindromic.o
+
+# target to build an object file
+al/Palindromic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Palindromic.dir/build.make CMakeFiles/Palindromic.dir/al/Palindromic.cpp.o
+.PHONY : al/Palindromic.cpp.o
+
+al/Palindromic.i: al/Palindromic.cpp.i
+
+.PHONY : al/Palindromic.i
+
+# target to preprocess a source file
+al/Palindromic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Palindromic.dir/build.make CMakeFiles/Palindromic.dir/al/Palindromic.cpp.i
+.PHONY : al/Palindromic.cpp.i
+
+al/Palindromic.s: al/Palindromic.cpp.s
+
+.PHONY : al/Palindromic.s
+
+# target to generate assembly for a file
+al/Palindromic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Palindromic.dir/build.make CMakeFiles/Palindromic.dir/al/Palindromic.cpp.s
+.PHONY : al/Palindromic.cpp.s
 
 al/bank.o: al/bank.cpp.o
 
@@ -407,6 +473,33 @@ al/glz.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glz.dir/build.make CMakeFiles/glz.dir/al/glz.cpp.s
 .PHONY : al/glz.cpp.s
 
+al/jiege.o: al/jiege.cpp.o
+
+.PHONY : al/jiege.o
+
+# target to build an object file
+al/jiege.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jiege.dir/build.make CMakeFiles/jiege.dir/al/jiege.cpp.o
+.PHONY : al/jiege.cpp.o
+
+al/jiege.i: al/jiege.cpp.i
+
+.PHONY : al/jiege.i
+
+# target to preprocess a source file
+al/jiege.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jiege.dir/build.make CMakeFiles/jiege.dir/al/jiege.cpp.i
+.PHONY : al/jiege.cpp.i
+
+al/jiege.s: al/jiege.cpp.s
+
+.PHONY : al/jiege.s
+
+# target to generate assembly for a file
+al/jiege.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jiege.dir/build.make CMakeFiles/jiege.dir/al/jiege.cpp.s
+.PHONY : al/jiege.cpp.s
+
 al/os_bank.o: al/os_bank.cpp.o
 
 .PHONY : al/os_bank.o
@@ -461,6 +554,33 @@ al/process.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process.dir/build.make CMakeFiles/process.dir/al/process.cpp.s
 .PHONY : al/process.cpp.s
 
+al/sy5_self.o: al/sy5_self.cpp.o
+
+.PHONY : al/sy5_self.o
+
+# target to build an object file
+al/sy5_self.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sy5_self.dir/build.make CMakeFiles/sy5_self.dir/al/sy5_self.cpp.o
+.PHONY : al/sy5_self.cpp.o
+
+al/sy5_self.i: al/sy5_self.cpp.i
+
+.PHONY : al/sy5_self.i
+
+# target to preprocess a source file
+al/sy5_self.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sy5_self.dir/build.make CMakeFiles/sy5_self.dir/al/sy5_self.cpp.i
+.PHONY : al/sy5_self.cpp.i
+
+al/sy5_self.s: al/sy5_self.cpp.s
+
+.PHONY : al/sy5_self.s
+
+# target to generate assembly for a file
+al/sy5_self.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sy5_self.dir/build.make CMakeFiles/sy5_self.dir/al/sy5_self.cpp.s
+.PHONY : al/sy5_self.cpp.s
+
 al/tx.o: al/tx.cpp.o
 
 .PHONY : al/tx.o
@@ -494,8 +614,8 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/main.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -504,8 +624,8 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/main.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -514,8 +634,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/main.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 sy1/lexical_analysis.o: sy1/lexical_analysis.cpp.o
@@ -636,20 +756,26 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... CMakeCXXCompilerId"
 	@echo "... POC"
+	@echo "... Palindromic"
 	@echo "... bank"
 	@echo "... dp2"
 	@echo "... glz"
 	@echo "... grammar_parser"
+	@echo "... jiege"
 	@echo "... lexical_analysis"
 	@echo "... main"
 	@echo "... operator_precedence_grammar"
 	@echo "... os_bank"
 	@echo "... process"
 	@echo "... sy2_3"
+	@echo "... sy5_self"
 	@echo "... tx"
 	@echo "... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.o"
 	@echo "... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.i"
 	@echo "... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.s"
+	@echo "... al/Palindromic.o"
+	@echo "... al/Palindromic.i"
+	@echo "... al/Palindromic.s"
 	@echo "... al/bank.o"
 	@echo "... al/bank.i"
 	@echo "... al/bank.s"
@@ -659,12 +785,18 @@ help:
 	@echo "... al/glz.o"
 	@echo "... al/glz.i"
 	@echo "... al/glz.s"
+	@echo "... al/jiege.o"
+	@echo "... al/jiege.i"
+	@echo "... al/jiege.s"
 	@echo "... al/os_bank.o"
 	@echo "... al/os_bank.i"
 	@echo "... al/os_bank.s"
 	@echo "... al/process.o"
 	@echo "... al/process.i"
 	@echo "... al/process.s"
+	@echo "... al/sy5_self.o"
+	@echo "... al/sy5_self.i"
+	@echo "... al/sy5_self.s"
 	@echo "... al/tx.o"
 	@echo "... al/tx.i"
 	@echo "... al/tx.s"

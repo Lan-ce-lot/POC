@@ -1,14 +1,15 @@
 #include <algorithm>
 #include <iostream>
 #include <map>
+
 using namespace std;
 
 const int KEY_LEN = 25;
 const int SYMBOLS_LEN = 19;
 string key[] = {"if", "then", "else", "while", "do",
-                "auto", "break", "char", "const","continue",
-                "default", "double","float", "for","int",
-                "long", "return", "signed","sizeof", "static",
+                "auto", "break", "char", "const", "continue",
+                "default", "double", "float", "for", "int",
+                "long", "return", "signed", "sizeof", "static",
                 "struct", "switch", "typedef", "unsigned", "void"};
 
 char symbols[SYMBOLS_LEN] = {'+', '-', '*', '/', '>',
@@ -78,7 +79,7 @@ void scan(FILE *fpin) {
                         }
                         fseek(fpin, -1L, 1);
                         cout << "<2 , " << tem << ">" << endl;
-                    } else if (ch == 'x') {
+                    } else if (ch == 'x' || ch == 'X') {
                         ch = fgetc(fpin);
                         while (IsDigit(ch) || IsA_F(ch)) {
                             tem += ch;
@@ -86,6 +87,10 @@ void scan(FILE *fpin) {
                         }
                         fseek(fpin, -1L, 1);
                         cout << "<3 , " << tem << ">" << endl;
+                    } else {
+
+                        fseek(fpin, -1L, 1);
+                        cout << "<1 , " << 0 << ">" << endl;
                     }
                 } else {
                     while (IsDigit(ch)) {
@@ -95,8 +100,7 @@ void scan(FILE *fpin) {
                     fseek(fpin, -1L, 1);
                     cout << "<1 , " << tem << ">" << endl;
                 }
-            }
-            else {
+            } else {
                 bool flag = false;
                 for (int i = 0; i < CHECK_2_LEN; i++) {
                     if (ch == check_2[i]) {
@@ -133,9 +137,10 @@ void scan(FILE *fpin) {
 
 int main() {
     FILE *fpin;
+
     cout << "词法分析器输出：" << endl;
     while (true) {
-        if ((fpin = fopen(R"(D:\work\clion\POC\sy1\1.txt)", "r")) != nullptr)
+        if ((fpin = fopen(R"(/home/lance/CLionProjects/POC/sy1/test.txt)", "r")) != nullptr)
             break;
         else
             cout << "文件路径错误\n";

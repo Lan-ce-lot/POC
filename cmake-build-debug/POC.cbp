@@ -8,646 +8,883 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="POC">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/POC.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 POC"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="POC/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/POC.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 POC/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="bank">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/bank.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 bank"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="bank/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/bank.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 bank/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="dp2">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/dp2.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 dp2"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="dp2/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/dp2.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 dp2/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="glz">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/glz.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 glz"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="glz/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/glz.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 glz/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="process">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/process.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 process"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="process/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/process.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 process/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="main">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/main.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="main/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/main.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tx">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/tx.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 tx"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tx/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/tx.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 tx/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="grammar_parser">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/grammar_parser.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 grammar_parser"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="grammar_parser/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/grammar_parser.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 grammar_parser/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="CMakeCXXCompilerId">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeCXXCompilerId.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMakeCXXCompilerId"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="CMakeCXXCompilerId/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeCXXCompilerId.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMakeCXXCompilerId/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="lexical_analysis">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/lexical_analysis.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 lexical_analysis"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="lexical_analysis/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/lexical_analysis.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 lexical_analysis/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="os_bank">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/os_bank.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 os_bank"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="os_bank/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/os_bank.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 os_bank/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sy2_3">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/sy2_3.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 sy2_3"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sy2_3/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/sy2_3.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 sy2_3/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="operator_precedence_grammar">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/operator_precedence_grammar.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/operator_precedence_grammar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 operator_precedence_grammar"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 operator_precedence_grammar"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="operator_precedence_grammar/fast">
-				<Option output="/cygdrive/d/work/clion/POC/cmake-build-debug/operator_precedence_grammar.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/d/work/clion/POC/cmake-build-debug"/>
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/operator_precedence_grammar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/cygdrive/d/work/clion/POC/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 operator_precedence_grammar/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/d/work/clion/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 operator_precedence_grammar/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="grammar_parser">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/grammar_parser" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 grammar_parser"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="grammar_parser/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/grammar_parser" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 grammar_parser/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lexical_analysis">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/lexical_analysis" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 lexical_analysis"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lexical_analysis/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/lexical_analysis" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 lexical_analysis/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bank">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/bank" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 bank"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bank/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/bank" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 bank/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="os_bank">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/os_bank" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 os_bank"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="os_bank/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/os_bank" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 os_bank/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="process">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/process" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 process"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="process/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/process" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 process/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tx">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/tx" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 tx"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tx/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/tx" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 tx/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CMakeCXXCompilerId">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/CMakeCXXCompilerId" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMakeCXXCompilerId"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CMakeCXXCompilerId/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/CMakeCXXCompilerId" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMakeCXXCompilerId/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Palindromic">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/Palindromic" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 Palindromic"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Palindromic/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/Palindromic" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 Palindromic/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sy5_self">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/sy5_self" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 sy5_self"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sy5_self/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/sy5_self" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 sy5_self/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dp2">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/dp2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 dp2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dp2/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/dp2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 dp2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="POC">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/POC" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 POC"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="POC/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/POC" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 POC/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sy2_3">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/sy2_3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 sy2_3"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sy2_3/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/sy2_3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 sy2_3/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glz">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/glz" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 glz"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glz/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/glz" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 glz/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="jiege">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/jiege" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 jiege"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="jiege/fast">
+				<Option output="/home/lance/CLionProjects/POC/cmake-build-debug/jiege" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lance/CLionProjects/POC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lance/CLionProjects/POC/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 jiege/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lance/CLionProjects/POC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/d/work/clion/POC/al/bank.cpp">
+		<Unit filename="/home/lance/CLionProjects/POC/al/Palindromic.cpp">
+			<Option target="Palindromic"/>
+		</Unit>
+		<Unit filename="/home/lance/CLionProjects/POC/al/bank.cpp">
 			<Option target="bank"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/al/dp2.cpp">
+		<Unit filename="/home/lance/CLionProjects/POC/al/dp2.cpp">
 			<Option target="dp2"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/al/glz.cpp">
+		<Unit filename="/home/lance/CLionProjects/POC/al/glz.cpp">
 			<Option target="glz"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/al/os_bank.cpp">
+		<Unit filename="/home/lance/CLionProjects/POC/al/jiege.cpp">
+			<Option target="jiege"/>
+		</Unit>
+		<Unit filename="/home/lance/CLionProjects/POC/al/os_bank.cpp">
 			<Option target="os_bank"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/al/process.cpp">
+		<Unit filename="/home/lance/CLionProjects/POC/al/process.cpp">
 			<Option target="process"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/al/tx.cpp">
+		<Unit filename="/home/lance/CLionProjects/POC/al/sy5_self.cpp">
+			<Option target="sy5_self"/>
+		</Unit>
+		<Unit filename="/home/lance/CLionProjects/POC/al/tx.cpp">
 			<Option target="tx"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp">
+		<Unit filename="/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp">
 			<Option target="CMakeCXXCompilerId"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/main.cpp">
-			<Option target="POC"/>
+		<Unit filename="/home/lance/CLionProjects/POC/main.cpp">
 			<Option target="main"/>
+			<Option target="POC"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/sy1/lexical_analysis.cpp">
+		<Unit filename="/home/lance/CLionProjects/POC/sy1/lexical_analysis.cpp">
 			<Option target="lexical_analysis"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/sy2/grammar_parser.cpp">
+		<Unit filename="/home/lance/CLionProjects/POC/sy2/grammar_parser.cpp">
 			<Option target="grammar_parser"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/sy2/sy2_3.cpp">
+		<Unit filename="/home/lance/CLionProjects/POC/sy2/sy2_3.cpp">
 			<Option target="sy2_3"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/sy3/operator_precedence_grammar.cpp">
+		<Unit filename="/home/lance/CLionProjects/POC/sy3/operator_precedence_grammar.cpp">
 			<Option target="operator_precedence_grammar"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/work/clion/POC/CMakeLists.txt">
+		<Unit filename="/home/lance/CLionProjects/POC/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

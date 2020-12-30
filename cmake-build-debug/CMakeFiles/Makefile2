@@ -55,37 +55,40 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /cygdrive/c/Users/hcs/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe
+CMAKE_COMMAND = /home/lance/文档/software/clion/clion-2020.3/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /cygdrive/c/Users/hcs/AppData/Local/JetBrains/CLion2020.2/cygwin_cmake/bin/cmake.exe -E rm -f
+RM = /home/lance/文档/software/clion/clion-2020.3/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/d/work/clion/POC
+CMAKE_SOURCE_DIR = /home/lance/CLionProjects/POC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/d/work/clion/POC/cmake-build-debug
+CMAKE_BINARY_DIR = /home/lance/CLionProjects/POC/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/POC.dir/all
-all: CMakeFiles/bank.dir/all
-all: CMakeFiles/dp2.dir/all
-all: CMakeFiles/glz.dir/all
-all: CMakeFiles/process.dir/all
-all: CMakeFiles/main.dir/all
-all: CMakeFiles/tx.dir/all
-all: CMakeFiles/grammar_parser.dir/all
-all: CMakeFiles/CMakeCXXCompilerId.dir/all
-all: CMakeFiles/lexical_analysis.dir/all
-all: CMakeFiles/os_bank.dir/all
-all: CMakeFiles/sy2_3.dir/all
 all: CMakeFiles/operator_precedence_grammar.dir/all
+all: CMakeFiles/grammar_parser.dir/all
+all: CMakeFiles/lexical_analysis.dir/all
+all: CMakeFiles/bank.dir/all
+all: CMakeFiles/main.dir/all
+all: CMakeFiles/os_bank.dir/all
+all: CMakeFiles/process.dir/all
+all: CMakeFiles/tx.dir/all
+all: CMakeFiles/CMakeCXXCompilerId.dir/all
+all: CMakeFiles/Palindromic.dir/all
+all: CMakeFiles/sy5_self.dir/all
+all: CMakeFiles/dp2.dir/all
+all: CMakeFiles/POC.dir/all
+all: CMakeFiles/sy2_3.dir/all
+all: CMakeFiles/glz.dir/all
+all: CMakeFiles/jiege.dir/all
 
 .PHONY : all
 
@@ -95,210 +98,51 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/POC.dir/clean
-clean: CMakeFiles/bank.dir/clean
-clean: CMakeFiles/dp2.dir/clean
-clean: CMakeFiles/glz.dir/clean
-clean: CMakeFiles/process.dir/clean
-clean: CMakeFiles/main.dir/clean
-clean: CMakeFiles/tx.dir/clean
-clean: CMakeFiles/grammar_parser.dir/clean
-clean: CMakeFiles/CMakeCXXCompilerId.dir/clean
-clean: CMakeFiles/lexical_analysis.dir/clean
-clean: CMakeFiles/os_bank.dir/clean
-clean: CMakeFiles/sy2_3.dir/clean
 clean: CMakeFiles/operator_precedence_grammar.dir/clean
+clean: CMakeFiles/grammar_parser.dir/clean
+clean: CMakeFiles/lexical_analysis.dir/clean
+clean: CMakeFiles/bank.dir/clean
+clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/os_bank.dir/clean
+clean: CMakeFiles/process.dir/clean
+clean: CMakeFiles/tx.dir/clean
+clean: CMakeFiles/CMakeCXXCompilerId.dir/clean
+clean: CMakeFiles/Palindromic.dir/clean
+clean: CMakeFiles/sy5_self.dir/clean
+clean: CMakeFiles/dp2.dir/clean
+clean: CMakeFiles/POC.dir/clean
+clean: CMakeFiles/sy2_3.dir/clean
+clean: CMakeFiles/glz.dir/clean
+clean: CMakeFiles/jiege.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/POC.dir
+# Target rules for target CMakeFiles/operator_precedence_grammar.dir
 
 # All Build rule for target.
-CMakeFiles/POC.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target POC"
-.PHONY : CMakeFiles/POC.dir/all
+CMakeFiles/operator_precedence_grammar.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/operator_precedence_grammar.dir/build.make CMakeFiles/operator_precedence_grammar.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/operator_precedence_grammar.dir/build.make CMakeFiles/operator_precedence_grammar.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=21,22 "Built target operator_precedence_grammar"
+.PHONY : CMakeFiles/operator_precedence_grammar.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/POC.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/POC.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/POC.dir/rule
+CMakeFiles/operator_precedence_grammar.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/operator_precedence_grammar.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/operator_precedence_grammar.dir/rule
 
 # Convenience name for target.
-POC: CMakeFiles/POC.dir/rule
+operator_precedence_grammar: CMakeFiles/operator_precedence_grammar.dir/rule
 
-.PHONY : POC
-
-# clean rule for target.
-CMakeFiles/POC.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/clean
-.PHONY : CMakeFiles/POC.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/bank.dir
-
-# All Build rule for target.
-CMakeFiles/bank.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target bank"
-.PHONY : CMakeFiles/bank.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/bank.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/bank.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/bank.dir/rule
-
-# Convenience name for target.
-bank: CMakeFiles/bank.dir/rule
-
-.PHONY : bank
+.PHONY : operator_precedence_grammar
 
 # clean rule for target.
-CMakeFiles/bank.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/clean
-.PHONY : CMakeFiles/bank.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/dp2.dir
-
-# All Build rule for target.
-CMakeFiles/dp2.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dp2.dir/build.make CMakeFiles/dp2.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dp2.dir/build.make CMakeFiles/dp2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target dp2"
-.PHONY : CMakeFiles/dp2.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/dp2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dp2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/dp2.dir/rule
-
-# Convenience name for target.
-dp2: CMakeFiles/dp2.dir/rule
-
-.PHONY : dp2
-
-# clean rule for target.
-CMakeFiles/dp2.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dp2.dir/build.make CMakeFiles/dp2.dir/clean
-.PHONY : CMakeFiles/dp2.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/glz.dir
-
-# All Build rule for target.
-CMakeFiles/glz.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glz.dir/build.make CMakeFiles/glz.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glz.dir/build.make CMakeFiles/glz.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target glz"
-.PHONY : CMakeFiles/glz.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/glz.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/glz.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/glz.dir/rule
-
-# Convenience name for target.
-glz: CMakeFiles/glz.dir/rule
-
-.PHONY : glz
-
-# clean rule for target.
-CMakeFiles/glz.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/glz.dir/build.make CMakeFiles/glz.dir/clean
-.PHONY : CMakeFiles/glz.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/process.dir
-
-# All Build rule for target.
-CMakeFiles/process.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/process.dir/build.make CMakeFiles/process.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/process.dir/build.make CMakeFiles/process.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=21,22 "Built target process"
-.PHONY : CMakeFiles/process.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/process.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/process.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/process.dir/rule
-
-# Convenience name for target.
-process: CMakeFiles/process.dir/rule
-
-.PHONY : process
-
-# clean rule for target.
-CMakeFiles/process.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/process.dir/build.make CMakeFiles/process.dir/clean
-.PHONY : CMakeFiles/process.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/main.dir
-
-# All Build rule for target.
-CMakeFiles/main.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
-
-# Convenience name for target.
-main: CMakeFiles/main.dir/rule
-
-.PHONY : main
-
-# clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/tx.dir
-
-# All Build rule for target.
-CMakeFiles/tx.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tx.dir/build.make CMakeFiles/tx.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tx.dir/build.make CMakeFiles/tx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=25,26 "Built target tx"
-.PHONY : CMakeFiles/tx.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/tx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tx.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/tx.dir/rule
-
-# Convenience name for target.
-tx: CMakeFiles/tx.dir/rule
-
-.PHONY : tx
-
-# clean rule for target.
-CMakeFiles/tx.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tx.dir/build.make CMakeFiles/tx.dir/clean
-.PHONY : CMakeFiles/tx.dir/clean
+CMakeFiles/operator_precedence_grammar.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/operator_precedence_grammar.dir/build.make CMakeFiles/operator_precedence_grammar.dir/clean
+.PHONY : CMakeFiles/operator_precedence_grammar.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/grammar_parser.dir
@@ -307,14 +151,14 @@ CMakeFiles/tx.dir/clean:
 CMakeFiles/grammar_parser.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grammar_parser.dir/build.make CMakeFiles/grammar_parser.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grammar_parser.dir/build.make CMakeFiles/grammar_parser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target grammar_parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target grammar_parser"
 .PHONY : CMakeFiles/grammar_parser.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/grammar_parser.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/grammar_parser.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/grammar_parser.dir/rule
 
 # Convenience name for target.
@@ -328,47 +172,20 @@ CMakeFiles/grammar_parser.dir/clean:
 .PHONY : CMakeFiles/grammar_parser.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/CMakeCXXCompilerId.dir
-
-# All Build rule for target.
-CMakeFiles/CMakeCXXCompilerId.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target CMakeCXXCompilerId"
-.PHONY : CMakeFiles/CMakeCXXCompilerId.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/CMakeCXXCompilerId.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CMakeCXXCompilerId.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/CMakeCXXCompilerId.dir/rule
-
-# Convenience name for target.
-CMakeCXXCompilerId: CMakeFiles/CMakeCXXCompilerId.dir/rule
-
-.PHONY : CMakeCXXCompilerId
-
-# clean rule for target.
-CMakeFiles/CMakeCXXCompilerId.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/clean
-.PHONY : CMakeFiles/CMakeCXXCompilerId.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/lexical_analysis.dir
 
 # All Build rule for target.
 CMakeFiles/lexical_analysis.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexical_analysis.dir/build.make CMakeFiles/lexical_analysis.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexical_analysis.dir/build.make CMakeFiles/lexical_analysis.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target lexical_analysis"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=17,18 "Built target lexical_analysis"
 .PHONY : CMakeFiles/lexical_analysis.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/lexical_analysis.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lexical_analysis.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/lexical_analysis.dir/rule
 
 # Convenience name for target.
@@ -382,20 +199,74 @@ CMakeFiles/lexical_analysis.dir/clean:
 .PHONY : CMakeFiles/lexical_analysis.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/bank.dir
+
+# All Build rule for target.
+CMakeFiles/bank.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target bank"
+.PHONY : CMakeFiles/bank.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/bank.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/bank.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/bank.dir/rule
+
+# Convenience name for target.
+bank: CMakeFiles/bank.dir/rule
+
+.PHONY : bank
+
+# clean rule for target.
+CMakeFiles/bank.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/clean
+.PHONY : CMakeFiles/bank.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/main.dir
+
+# All Build rule for target.
+CMakeFiles/main.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=19,20 "Built target main"
+.PHONY : CMakeFiles/main.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# clean rule for target.
+CMakeFiles/main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/os_bank.dir
 
 # All Build rule for target.
 CMakeFiles/os_bank.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/os_bank.dir/build.make CMakeFiles/os_bank.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/os_bank.dir/build.make CMakeFiles/os_bank.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=19,20 "Built target os_bank"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=23,24 "Built target os_bank"
 .PHONY : CMakeFiles/os_bank.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/os_bank.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/os_bank.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/os_bank.dir/rule
 
 # Convenience name for target.
@@ -409,20 +280,209 @@ CMakeFiles/os_bank.dir/clean:
 .PHONY : CMakeFiles/os_bank.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/process.dir
+
+# All Build rule for target.
+CMakeFiles/process.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/process.dir/build.make CMakeFiles/process.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/process.dir/build.make CMakeFiles/process.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=25,26 "Built target process"
+.PHONY : CMakeFiles/process.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/process.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/process.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/process.dir/rule
+
+# Convenience name for target.
+process: CMakeFiles/process.dir/rule
+
+.PHONY : process
+
+# clean rule for target.
+CMakeFiles/process.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/process.dir/build.make CMakeFiles/process.dir/clean
+.PHONY : CMakeFiles/process.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/tx.dir
+
+# All Build rule for target.
+CMakeFiles/tx.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tx.dir/build.make CMakeFiles/tx.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tx.dir/build.make CMakeFiles/tx.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=31,32 "Built target tx"
+.PHONY : CMakeFiles/tx.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/tx.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tx.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/tx.dir/rule
+
+# Convenience name for target.
+tx: CMakeFiles/tx.dir/rule
+
+.PHONY : tx
+
+# clean rule for target.
+CMakeFiles/tx.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tx.dir/build.make CMakeFiles/tx.dir/clean
+.PHONY : CMakeFiles/tx.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/CMakeCXXCompilerId.dir
+
+# All Build rule for target.
+CMakeFiles/CMakeCXXCompilerId.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target CMakeCXXCompilerId"
+.PHONY : CMakeFiles/CMakeCXXCompilerId.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/CMakeCXXCompilerId.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CMakeCXXCompilerId.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/CMakeCXXCompilerId.dir/rule
+
+# Convenience name for target.
+CMakeCXXCompilerId: CMakeFiles/CMakeCXXCompilerId.dir/rule
+
+.PHONY : CMakeCXXCompilerId
+
+# clean rule for target.
+CMakeFiles/CMakeCXXCompilerId.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CMakeCXXCompilerId.dir/build.make CMakeFiles/CMakeCXXCompilerId.dir/clean
+.PHONY : CMakeFiles/CMakeCXXCompilerId.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Palindromic.dir
+
+# All Build rule for target.
+CMakeFiles/Palindromic.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Palindromic.dir/build.make CMakeFiles/Palindromic.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Palindromic.dir/build.make CMakeFiles/Palindromic.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target Palindromic"
+.PHONY : CMakeFiles/Palindromic.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Palindromic.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Palindromic.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/Palindromic.dir/rule
+
+# Convenience name for target.
+Palindromic: CMakeFiles/Palindromic.dir/rule
+
+.PHONY : Palindromic
+
+# clean rule for target.
+CMakeFiles/Palindromic.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Palindromic.dir/build.make CMakeFiles/Palindromic.dir/clean
+.PHONY : CMakeFiles/Palindromic.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sy5_self.dir
+
+# All Build rule for target.
+CMakeFiles/sy5_self.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sy5_self.dir/build.make CMakeFiles/sy5_self.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sy5_self.dir/build.make CMakeFiles/sy5_self.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=29,30 "Built target sy5_self"
+.PHONY : CMakeFiles/sy5_self.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sy5_self.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sy5_self.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/sy5_self.dir/rule
+
+# Convenience name for target.
+sy5_self: CMakeFiles/sy5_self.dir/rule
+
+.PHONY : sy5_self
+
+# clean rule for target.
+CMakeFiles/sy5_self.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sy5_self.dir/build.make CMakeFiles/sy5_self.dir/clean
+.PHONY : CMakeFiles/sy5_self.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/dp2.dir
+
+# All Build rule for target.
+CMakeFiles/dp2.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dp2.dir/build.make CMakeFiles/dp2.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dp2.dir/build.make CMakeFiles/dp2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target dp2"
+.PHONY : CMakeFiles/dp2.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/dp2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dp2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/dp2.dir/rule
+
+# Convenience name for target.
+dp2: CMakeFiles/dp2.dir/rule
+
+.PHONY : dp2
+
+# clean rule for target.
+CMakeFiles/dp2.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dp2.dir/build.make CMakeFiles/dp2.dir/clean
+.PHONY : CMakeFiles/dp2.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/POC.dir
+
+# All Build rule for target.
+CMakeFiles/POC.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target POC"
+.PHONY : CMakeFiles/POC.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/POC.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/POC.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/POC.dir/rule
+
+# Convenience name for target.
+POC: CMakeFiles/POC.dir/rule
+
+.PHONY : POC
+
+# clean rule for target.
+CMakeFiles/POC.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/POC.dir/build.make CMakeFiles/POC.dir/clean
+.PHONY : CMakeFiles/POC.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/sy2_3.dir
 
 # All Build rule for target.
 CMakeFiles/sy2_3.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sy2_3.dir/build.make CMakeFiles/sy2_3.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sy2_3.dir/build.make CMakeFiles/sy2_3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=23,24 "Built target sy2_3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=27,28 "Built target sy2_3"
 .PHONY : CMakeFiles/sy2_3.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sy2_3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sy2_3.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/sy2_3.dir/rule
 
 # Convenience name for target.
@@ -436,31 +496,58 @@ CMakeFiles/sy2_3.dir/clean:
 .PHONY : CMakeFiles/sy2_3.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/operator_precedence_grammar.dir
+# Target rules for target CMakeFiles/glz.dir
 
 # All Build rule for target.
-CMakeFiles/operator_precedence_grammar.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/operator_precedence_grammar.dir/build.make CMakeFiles/operator_precedence_grammar.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/operator_precedence_grammar.dir/build.make CMakeFiles/operator_precedence_grammar.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles --progress-num=17,18 "Built target operator_precedence_grammar"
-.PHONY : CMakeFiles/operator_precedence_grammar.dir/all
+CMakeFiles/glz.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glz.dir/build.make CMakeFiles/glz.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glz.dir/build.make CMakeFiles/glz.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target glz"
+.PHONY : CMakeFiles/glz.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/operator_precedence_grammar.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/operator_precedence_grammar.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/work/clion/POC/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/operator_precedence_grammar.dir/rule
+CMakeFiles/glz.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/glz.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/glz.dir/rule
 
 # Convenience name for target.
-operator_precedence_grammar: CMakeFiles/operator_precedence_grammar.dir/rule
+glz: CMakeFiles/glz.dir/rule
 
-.PHONY : operator_precedence_grammar
+.PHONY : glz
 
 # clean rule for target.
-CMakeFiles/operator_precedence_grammar.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/operator_precedence_grammar.dir/build.make CMakeFiles/operator_precedence_grammar.dir/clean
-.PHONY : CMakeFiles/operator_precedence_grammar.dir/clean
+CMakeFiles/glz.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glz.dir/build.make CMakeFiles/glz.dir/clean
+.PHONY : CMakeFiles/glz.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/jiege.dir
+
+# All Build rule for target.
+CMakeFiles/jiege.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jiege.dir/build.make CMakeFiles/jiege.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jiege.dir/build.make CMakeFiles/jiege.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target jiege"
+.PHONY : CMakeFiles/jiege.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/jiege.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/jiege.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lance/CLionProjects/POC/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/jiege.dir/rule
+
+# Convenience name for target.
+jiege: CMakeFiles/jiege.dir/rule
+
+.PHONY : jiege
+
+# clean rule for target.
+CMakeFiles/jiege.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jiege.dir/build.make CMakeFiles/jiege.dir/clean
+.PHONY : CMakeFiles/jiege.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
